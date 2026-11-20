@@ -142,9 +142,13 @@ module foundry 'br/public:avm/res/cognitive-services/account:0.19.2' = {
 }
 
 // AVM has no module for Foundry projects or project connections, so these use native resources
-// that follow Azure-Samples/azd-ai-starter-basic.
+// that follow Azure-Samples/azd-ai-starter-basic. The explicit dependency delays reading the
+// existing account until the AVM module has created it.
 resource foundryAccount 'Microsoft.CognitiveServices/accounts@2026-09-01' existing = {
   name: foundryAccountName
+  dependsOn: [
+    foundry
+  ]
 }
 
 resource project 'Microsoft.CognitiveServices/accounts/projects@2026-09-01' = {
@@ -159,9 +163,6 @@ resource project 'Microsoft.CognitiveServices/accounts/projects@2026-09-01' = {
     displayName: 'Voice service agent'
     description: 'GPT-Live voice agent for a consumer energy customer-service demo.'
   }
-  dependsOn: [
-    foundry
-  ]
 }
 
 resource appInsightsConnection 'Microsoft.CognitiveServices/accounts/projects/connections@2026-09-01' = {
