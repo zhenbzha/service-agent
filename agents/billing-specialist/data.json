@@ -1,0 +1,81 @@
+{
+  "notice": "Synthetic demo data for the fictional company Zava Energy. Not real customers or prices. Billing rules are in the Zava Energy billing handbook.",
+  "today": "2026-11-20",
+  "company": {
+    "name": "Zava Energy",
+    "currency": "EUR"
+  },
+  "customers": [
+    {
+      "customerNumber": "100245",
+      "postcode": "00150",
+      "name": "Emma Lind",
+      "contract": { "type": "fixed price", "unitPriceCentsPerKwh": 9.8, "basicFeeEurPerMonth": 4.9 },
+      "invoices": [
+        { "invoice": "INV-100245-2608", "period": "August 2026", "kwh": 610, "reading": "actual", "energyChargeEur": 59.78, "basicFeeEur": 4.9, "totalEur": 64.68, "status": "paid" },
+        { "invoice": "INV-100245-2609", "period": "September 2026", "kwh": 690, "reading": "actual", "energyChargeEur": 67.62, "basicFeeEur": 4.9, "totalEur": 72.52, "status": "paid" },
+        { "invoice": "INV-100245-2610", "period": "October 2026", "issued": "2026-11-05", "due": "2026-11-25", "kwh": 1450, "reading": "estimated", "energyChargeEur": 142.1, "basicFeeEur": 4.9, "totalEur": 147.0, "status": "open", "extended": false }
+      ],
+      "meterReadings": [
+        { "period": "October 2026", "kwh": 720, "type": "actual", "received": "2026-11-08" }
+      ],
+      "payments": [],
+      "creditBalanceEur": 0,
+      "corrections": [],
+      "extensionsLast12Months": 0
+    },
+    {
+      "customerNumber": "100318",
+      "postcode": "02100",
+      "name": "Oliver Grant",
+      "contract": { "type": "spot price", "marginCentsPerKwh": 0.59, "basicFeeEurPerMonth": 3.95 },
+      "invoices": [
+        { "invoice": "INV-100318-2609", "period": "September 2026", "kwh": 780, "reading": "actual", "totalEur": 58.42, "status": "paid" },
+        { "invoice": "INV-100318-2610", "period": "October 2026", "issued": "2026-10-20", "due": "2026-11-03", "kwh": 1120, "reading": "actual", "totalEur": 118.3, "status": "paid", "extended": false }
+      ],
+      "meterReadings": [],
+      "payments": [
+        { "date": "2026-10-05", "method": "direct debit", "amountEur": 58.42, "invoice": "INV-100318-2609" },
+        { "date": "2026-11-03", "method": "direct debit", "amountEur": 118.3, "invoice": "INV-100318-2610" },
+        { "date": "2026-11-04", "method": "bank transfer", "amountEur": 118.3, "invoice": "INV-100318-2610" }
+      ],
+      "creditBalanceEur": 118.3,
+      "corrections": [],
+      "extensionsLast12Months": 0
+    },
+    {
+      "customerNumber": "100472",
+      "postcode": "33100",
+      "name": "Sofia Berg",
+      "contract": { "type": "spot price", "marginCentsPerKwh": 0.49, "basicFeeEurPerMonth": 4.5 },
+      "invoices": [
+        { "invoice": "INV-100472-2609", "period": "September 2026", "kwh": 640, "reading": "actual", "averageSpotCentsPerKwh": 4.1, "energyChargeEur": 29.38, "basicFeeEur": 4.5, "totalEur": 33.88, "status": "paid" },
+        { "invoice": "INV-100472-2610", "period": "October 2026", "issued": "2026-11-04", "due": "2026-11-24", "kwh": 1180, "reading": "actual", "averageSpotCentsPerKwh": 7.85, "energyChargeEur": 98.41, "basicFeeEur": 4.5, "totalEur": 102.91, "status": "open", "extended": false }
+      ],
+      "meterReadings": [],
+      "payments": [
+        { "date": "2026-10-10", "method": "e-invoice", "amountEur": 33.88, "invoice": "INV-100472-2609" }
+      ],
+      "creditBalanceEur": 0,
+      "corrections": [],
+      "extensionsLast12Months": 0
+    },
+    {
+      "customerNumber": "100533",
+      "postcode": "90100",
+      "name": "Noah Peters",
+      "contract": { "type": "fixed price", "unitPriceCentsPerKwh": 11.2, "basicFeeEurPerMonth": 5.9 },
+      "invoices": [
+        { "invoice": "INV-100533-2609", "period": "September 2026", "kwh": 1020, "reading": "actual", "energyChargeEur": 114.24, "basicFeeEur": 5.9, "totalEur": 120.14, "status": "paid" },
+        { "invoice": "INV-100533-2610", "period": "October 2026", "issued": "2026-11-07", "due": "2026-11-27", "kwh": 1610, "reading": "actual", "energyChargeEur": 180.32, "basicFeeEur": 5.9, "totalEur": 186.22, "status": "open", "extended": false }
+      ],
+      "meterReadings": [],
+      "payments": [
+        { "date": "2026-10-12", "method": "bank transfer", "amountEur": 120.14, "invoice": "INV-100533-2609" }
+      ],
+      "creditBalanceEur": 0,
+      "corrections": [],
+      "extensionsLast12Months": 1
+    }
+  ]
+}
