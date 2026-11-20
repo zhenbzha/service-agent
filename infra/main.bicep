@@ -14,7 +14,7 @@ param environmentName string
     type: 'location'
     usageName: [
       'OpenAI.GlobalStandard.gpt-live-1,5'
-      'OpenAI.DataZoneStandard.gpt-6.2-sol,100'
+      'OpenAI.DataZoneStandard.gpt-5.5,100'
       'OpenAI.DataZoneStandard.text-embedding-3-large,100'
     ]
   }
@@ -38,10 +38,10 @@ param projectName string = 'voice-service-agent'
 @minValue(1)
 param gptLiveCapacity int = 5
 
-@description('Responses-capable model that runs the billing specialist prompt agent.')
+@description('Responses-capable model that runs the billing specialist prompt agent. Use a model listed in the Agent Service model support table on Learn.')
 param responsesModel modelType = {
-  name: 'gpt-6.2-sol'
-  version: '2026-11-17'
+  name: 'gpt-5.5'
+  version: '2026-04-24'
   skuName: 'DataZoneStandard'
   capacity: 100
 }
