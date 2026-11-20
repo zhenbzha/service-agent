@@ -1,0 +1,21 @@
+[project]
+name = "voice-service-agent"
+version = "0.1.0"
+description = "Zava Energy voice customer-service agent on Microsoft Foundry"
+requires-python = ">=3.14"
+dependencies = [
+    "azure-ai-projects[voice]>=2.11.0",
+    "azure-core>=1.41.0",
+    "azure-identity>=1.27.0",
+    "azure-search-documents>=12.1.0",
+    "openai>=3.56.0",
+    "pypdf>=7.1.0",
+    "python-dotenv>=1.2.4",
+]
+
+# Microsoft-managed devices download Python packages through the Microsoft PyPI proxy.
+# default = true replaces PyPI, so every package resolves from this index.
+[[tool.uv.index]]
+name = "microsoft-pypi-proxy"
+url = "https://packagefeedproxy.microsoft.io/pypi/simple"
+default = true
