@@ -54,7 +54,7 @@ param embeddingModel modelType = {
   capacity: 100
 }
 
-@description('Deploy Azure AI Search for the knowledge base. Basic tier has a fixed monthly cost.')
+@description('Deploy Azure AI Search for the knowledge base. The billing specialist needs it for the handbook. Basic tier has a fixed monthly cost.')
 param deploySearch bool = true
 
 var tags = {
@@ -105,4 +105,7 @@ output RESPONSES_DEPLOYMENT string = resources.outputs.responsesDeploymentName
 output EMBEDDING_DEPLOYMENT string = resources.outputs.embeddingDeploymentName
 output AZURE_SEARCH_ENDPOINT string = resources.outputs.searchEndpoint
 output AZURE_SEARCH_CONNECTION_NAME string = resources.outputs.searchConnectionName
+output KNOWLEDGE_BASE_NAME string = resources.outputs.knowledgeBaseName
+output KNOWLEDGE_BASE_CONNECTION_NAME string = resources.outputs.knowledgeBaseConnectionName
+output KNOWLEDGE_BASE_MCP_ENDPOINT string = resources.outputs.knowledgeBaseMcpEndpoint
 output APPLICATIONINSIGHTS_CONNECTION_STRING string = resources.outputs.appInsightsConnectionString

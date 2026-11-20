@@ -33,9 +33,17 @@ param deploySearch bool
 var foundryAccountName = 'aif-${resourceToken}'
 var searchServiceName = 'srch-${resourceToken}'
 
+// Created by scripts/sync_knowledge.py with the GA Search API 2026-10-01 (the azure-search-documents
+// default). The MCP endpoint uses the same version; the service rejects 2026-04-01 on that route.
+var knowledgeBaseName = 'zava-energy-knowledge-base'
+var knowledgeBaseMcpEndpoint = deploySearch
+  ? '${search!.outputs.endpoint}/knowledgebases/${knowledgeBaseName}/mcp?api-version=2026-10-01'
+  : ''
+
 var roleIds = {
   foundryUser: '53ca6127-db72-4b80-b1b0-d745d6d5456d'
   cognitiveServicesUser: 'a97b65f3-24c7-4388-baec-2e87135dc908'
+  cognitiveServicesOpenAIUser: '5e0bd9bd-7b93-4f28-af87-19fc36ad61bd'
   logAnalyticsReader: '73c42c96-874c-492b-b04d-ab87d138a893'
   searchIndexDataContributor: '8ebe5a00-799e-43f5-93ac-243d3dce84a7'
   searchIndexDataReader: '1407120a-92aa-4202-b7e9-c0e197c71c8f'
@@ -246,6 +254,17 @@ module searchCognitiveServicesUser 'br/public:avm/ptn/authorization/resource-rol
   }
 }
 
+// Lets the developer embed the knowledge PDFs (scripts/sync_knowledge.py) on the account endpoint.
+module developerOpenAIUser 'br/public:avm/ptn/authorization/resource-role-assignment:0.1.2' = if (deploySearch) {
+  name: 'ra-dev-openai-user-${resourceToken}'
+  params: {
+    principalId: principalId
+    principalType: principalType
+    resourceId: foundry.outputs.resourceId
+    roleDefinitionId: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', roleIds.cognitiveServicesOpenAIUser)
+  }
+}
+
 resource searchConnection 'Microsoft.CognitiveServices/accounts/projects/connections@2026-09-01' = if (deploySearch) {
   parent: project
   name: searchServiceName
@@ -262,6 +281,25 @@ resource searchConnection 'Microsoft.CognitiveServices/accounts/projects/connect
   }
 }
 
+// Lets agents call the knowledge base MCP tool with the project's managed identity, as in Learn
+// "Connect agents to Foundry IQ knowledge bases", which uses this API version. The Bicep type
+// definition doesn't list ProjectManagedIdentity yet, hence the suppressed BCP036 warning.
+resource knowledgeBaseConnection 'Microsoft.CognitiveServices/accounts/projects/connections@2025-10-01-preview' = if (deploySearch) {
+  parent: project
+  name: knowledgeBaseName
+  properties: {
+    category: 'RemoteTool'
+    #disable-next-line BCP036
+    authType: 'ProjectManagedIdentity'
+    target: knowledgeBaseMcpEndpoint
+    audience: 'https://search.azure.com/'
+    isSharedToAll: true
+    metadata: {
+      ApiType: 'Azure'
+    }
+  }
+}
+
 output foundryAccountName string = foundry.outputs.name
 output projectName string = project.name
 output projectEndpoint string = project.properties.endpoints['AI Foundry API']
@@ -271,4 +309,7 @@ output responsesDeploymentName string = responsesModel.name
 output embeddingDeploymentName string = embeddingModel.name
 output searchEndpoint string = deploySearch ? search!.outputs.endpoint : ''
 output searchConnectionName string = deploySearch ? searchConnection.name : ''
+output knowledgeBaseName string = deploySearch ? knowledgeBaseName : ''
+output knowledgeBaseConnectionName string = deploySearch ? knowledgeBaseConnection.name : ''
+output knowledgeBaseMcpEndpoint string = knowledgeBaseMcpEndpoint
 output appInsightsConnectionString string = appInsights.outputs.connectionString
