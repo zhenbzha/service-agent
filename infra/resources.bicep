@@ -191,12 +191,15 @@ resource appInsightsConnection 'Microsoft.CognitiveServices/accounts/projects/co
   }
 }
 
+// Account scope, not project scope: evaluations call the judge model deployment, and Learn
+// ("Evaluation permissions") says a project-only Foundry User assignment doesn't authorize inference.
+// The project inherits the assignment.
 module developerFoundryUser 'br/public:avm/ptn/authorization/resource-role-assignment:0.1.2' = {
   name: 'ra-dev-foundry-user-${resourceToken}'
   params: {
     principalId: principalId
     principalType: principalType
-    resourceId: project.id
+    resourceId: foundry.outputs.resourceId
     roleDefinitionId: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', roleIds.foundryUser)
   }
 }
