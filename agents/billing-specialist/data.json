@@ -31,13 +31,13 @@
       "contract": { "type": "spot price", "marginCentsPerKwh": 0.59, "basicFeeEurPerMonth": 3.95 },
       "invoices": [
         { "invoice": "INV-100318-2609", "period": "September 2026", "kwh": 780, "reading": "actual", "totalEur": 58.42, "status": "paid" },
-        { "invoice": "INV-100318-2610", "period": "October 2026", "issued": "2026-10-20", "due": "2026-11-03", "kwh": 1120, "reading": "actual", "totalEur": 118.3, "status": "paid", "extended": false }
+        { "invoice": "INV-100318-2610", "period": "October 2026", "issued": "2026-11-02", "due": "2026-11-16", "kwh": 1120, "reading": "actual", "totalEur": 118.3, "status": "paid", "extended": false }
       ],
       "meterReadings": [],
       "payments": [
         { "date": "2026-10-05", "method": "direct debit", "amountEur": 58.42, "invoice": "INV-100318-2609" },
-        { "date": "2026-11-03", "method": "direct debit", "amountEur": 118.3, "invoice": "INV-100318-2610" },
-        { "date": "2026-11-04", "method": "bank transfer", "amountEur": 118.3, "invoice": "INV-100318-2610" }
+        { "date": "2026-11-13", "method": "bank transfer", "amountEur": 118.3, "invoice": "INV-100318-2610" },
+        { "date": "2026-11-16", "method": "direct debit", "amountEur": 118.3, "invoice": "INV-100318-2610" }
       ],
       "creditBalanceEur": 118.3,
       "corrections": [],
