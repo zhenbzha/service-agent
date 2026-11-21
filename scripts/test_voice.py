@@ -20,8 +20,10 @@ from array import array
 from collections.abc import Mapping
 from contextlib import suppress
 from dataclasses import dataclass, field
+from typing import Self
 
 from azure.ai.projects.aio import AIProjectClient
+from azure.ai.projects.aio.operations import AsyncBetaLiveConnection
 from azure.core.exceptions import HttpResponseError
 
 from common import (
@@ -30,6 +32,7 @@ from common import (
     VOICE_AGENT_NAME,
     ConfigError,
     azd_credential_async,
+    delegated_specialist_version,
     load_azd_env,
     require_env,
 )
@@ -42,8 +45,11 @@ AUDIBLE_SAMPLE_LEVEL = 256  # The SDK sample's threshold for ignoring near-silen
 REPLY_TIMEOUT_SECONDS = 150.0  # A delegation must finish within 120 seconds; then the answer is spoken.
 SESSION_EVENT_TIMEOUT_SECONDS = 30.0
 CLOSE_TIMEOUT_SECONDS = 10.0
-FAILED_BACKEND_EVENTS = {"error", "response.failed", "response.incomplete", "response.cancelled"}
-FAILED_BACKEND_STATUSES = {"failed", "incomplete", "cancelled"}
+FAILED_BACKEND_EVENTS = {"error", "response.failed", "response.incomplete"}
+FAILED_BACKEND_STATUSES = {"failed", "incomplete"}
+# GPT-Live can cancel a delegation it no longer needs, together with that delegation's specialist
+# response. That is fine as long as another delegation for the turn completes (check_answered).
+NON_FAILED_DELEGATION_STATUSES = {"completed", "cancelled"}
 
 
 class VoiceTestError(Exception):
@@ -57,9 +63,13 @@ def raise_on_error(event: Mapping) -> None:
         raise VoiceTestError(f"Live session error {error.get('code')}: {error.get('message')}")
     if event.get("type") == "response.event":
         backend_event = event.get("event") or {}
-        status = (backend_event.get("response") or {}).get("status")
+        response = backend_event.get("response") or {}
+        status = response.get("status")
         if backend_event.get("type") in FAILED_BACKEND_EVENTS or status in FAILED_BACKEND_STATUSES:
-            raise VoiceTestError(f"Specialist response {backend_event.get('type')} (status: {status})")
+            raise VoiceTestError(
+                f"Specialist response {backend_event.get('type')} (status: {status}, id: {response.get('id')}, "
+                f"error: {response.get('error') or backend_event.get('error') or response.get('incomplete_details')})"
+            )
 
 
 def is_audible(pcm: bytes) -> bool:
@@ -75,13 +85,15 @@ class ReplyTracker:
     last_activity: float
     transcript_parts: list[str] = field(default_factory=lambda: [""])
     open_delegations: set[str] = field(default_factory=set)
+    delegated: bool = False
+    answered: bool = False
     spoke_after_last_delegation: bool = True
     audio_bytes: int = 0
     conversation_ended: bool = False
     closed_event: Mapping | None = None
 
     @classmethod
-    def start_now(cls) -> ReplyTracker:
+    def start_now(cls) -> Self:
         now = time.monotonic()
         return cls(started_at=now, last_activity=now)
 
@@ -113,6 +125,7 @@ class ReplyTracker:
 
     def on_delegation_created(self, delegation: Mapping, now: float) -> None:
         self.open_delegations.add(delegation.get("id"))
+        self.delegated = True
         self.spoke_after_last_delegation = False
         self.transcript_parts.append("")
         self.last_activity = now
@@ -121,9 +134,10 @@ class ReplyTracker:
     def on_delegation_done(self, event: Mapping, now: float) -> None:
         status, error_code = event.get("status"), event.get("error_code")
         self.open_delegations.discard(event.get("delegation_id"))
+        self.answered = self.answered or status == "completed"
         self.last_activity = now
         self.log(f"delegation {status}" + (f" ({error_code})" if error_code else ""))
-        if status != "completed":
+        if status not in NON_FAILED_DELEGATION_STATUSES:
             raise VoiceTestError(f"Delegation {status}: {error_code or 'no error code'}")
 
     def on_transcript(self, delta: str, now: float) -> None:
@@ -154,8 +168,13 @@ class ReplyTracker:
             print(f"Agent: {part.strip()}")
         print(f"  ({self.audio_bytes / (2 * AUDIO_SAMPLE_RATE):.1f} s of audio)")
 
+    def check_answered(self) -> None:
+        """A turn that delegated must have at least one delegation that completed."""
+        if self.delegated and not self.answered:
+            raise VoiceTestError("No delegation completed, so the reply did not come from the specialist.")
 
-async def wait_for_event(connection, event_type: str, timeout: float) -> Mapping:
+
+async def wait_for_event(connection: AsyncBetaLiveConnection, event_type: str, timeout: float) -> Mapping:
     """Read events until one of the given type arrives, like wait_for_event_async in the SDK sample."""
     try:
         async with asyncio.timeout(timeout):
@@ -168,33 +187,39 @@ async def wait_for_event(connection, event_type: str, timeout: float) -> Mapping
                     raise VoiceTestError(f"Session closed while waiting for {event_type}: {event.get('reason')}")
     except TimeoutError as error:
         raise VoiceTestError(f"Timed out waiting for {event_type}.") from error
+    except ConnectionResetError as error:
+        raise VoiceTestError(f"The connection closed while waiting for {event_type}.") from error
 
 
-async def stream_until_reply_finished(connection, reply: ReplyTracker) -> None:
+async def stream_until_reply_finished(connection: AsyncBetaLiveConnection, reply: ReplyTracker) -> None:
     """Send real-time silence and read events until the agent finishes speaking."""
     deadline = time.monotonic() + REPLY_TIMEOUT_SECONDS
     next_send = time.monotonic()
-    while not reply.is_finished(time.monotonic()):
-        if time.monotonic() > deadline:
-            raise VoiceTestError(f"No finished reply within {REPLY_TIMEOUT_SECONDS:.0f} seconds.")
-        if time.monotonic() >= next_send:
-            await connection.session.input_audio.append(audio=SILENCE_CHUNK)
-            next_send = time.monotonic() + CHUNK_SECONDS
-        try:
-            event = await asyncio.wait_for(connection.recv(), timeout=max(0.001, next_send - time.monotonic()))
-        except TimeoutError:
-            continue
-        reply.observe(event, time.monotonic())
+    try:
+        while not reply.is_finished(time.monotonic()):
+            if time.monotonic() > deadline:
+                raise VoiceTestError(f"No finished reply within {REPLY_TIMEOUT_SECONDS:.0f} seconds.")
+            if time.monotonic() >= next_send:
+                await connection.session.input_audio.append(audio=SILENCE_CHUNK)
+                next_send = time.monotonic() + CHUNK_SECONDS
+            try:
+                event = await asyncio.wait_for(connection.recv(), timeout=max(0.001, next_send - time.monotonic()))
+            except TimeoutError:
+                continue
+            reply.observe(event, time.monotonic())
+    except ConnectionResetError as error:
+        raise VoiceTestError("The connection closed before the reply finished.") from error
 
 
-async def next_spoken_reply(connection) -> ReplyTracker:
+async def next_spoken_reply(connection: AsyncBetaLiveConnection) -> ReplyTracker:
     reply = ReplyTracker.start_now()
     await stream_until_reply_finished(connection, reply)
     reply.print_transcript()
+    reply.check_answered()
     return reply
 
 
-async def send_customer_turn(connection, text: str) -> None:
+async def send_customer_turn(connection: AsyncBetaLiveConnection, text: str) -> None:
     """A typed message goes to the session's backend (the specialist), not to the voice model."""
     await connection.response.item.create(
         item={"type": "message", "role": "user", "content": [{"type": "input_text", "text": text}]}
@@ -211,7 +236,9 @@ def check_pinned_delegation(started_event: Mapping, specialist_version: str) -> 
     print(f"Session started; delegation pinned to {SPECIALIST_NAME}:{specialist_version}.")
 
 
-async def run_conversation(connection, specialist_version: str, customer_turns: list[str]) -> ReplyTracker:
+async def run_conversation(
+    connection: AsyncBetaLiveConnection, specialist_version: str, customer_turns: list[str]
+) -> ReplyTracker:
     """Hear the greeting, then send each customer turn and wait for the spoken reply."""
     started = await wait_for_event(connection, "session.started", SESSION_EVENT_TIMEOUT_SECONDS)
     check_pinned_delegation(started, specialist_version)
@@ -226,25 +253,29 @@ async def run_conversation(connection, specialist_version: str, customer_turns: 
     return reply
 
 
-async def finish_session(connection, last_reply: ReplyTracker) -> None:
+async def finish_session(connection: AsyncBetaLiveConnection, last_reply: ReplyTracker) -> None:
     """Close the session unless the agent already ended it, then report why it closed."""
     closed = last_reply.closed_event
-    if closed is None and not last_reply.conversation_ended:
+    close_requested = closed is None and not last_reply.conversation_ended
+    if close_requested:
         await connection.session.close()
     if closed is None:
         # Learn doesn't say whether session.closed follows end_conversation, so don't require it.
         try:
             closed = await wait_for_event(connection, "session.closed", CLOSE_TIMEOUT_SECONDS)
         except VoiceTestError:
-            if not last_reply.conversation_ended:
+            if close_requested:
                 raise
             print("\nSession ended by the agent.")
             return
+    # Like close_session_async in the SDK samples: a session.close must end with close_requested.
+    if close_requested and closed.get("reason") != "close_requested":
+        raise VoiceTestError(f"Session did not close normally: {closed.get('reason')}")
     usage = closed.get("usage") or {}
     print(f"\nSession closed: {closed.get('reason')}; session seconds: {usage.get('seconds')}")
 
 
-async def run_scenario(project: AIProjectClient, voice_version: str, specialist_version: str, turns: list[str]):
+async def run_scenario(project: AIProjectClient, voice_version: str, specialist_version: str, turns: list[str]) -> None:
     async with project.beta.voice_agents.live.connect(
         agent_name=VOICE_AGENT_NAME, agent_version=voice_version
     ) as connection:
@@ -260,8 +291,8 @@ async def run_scenario(project: AIProjectClient, voice_version: str, specialist_
 
 async def latest_voice_agent(project: AIProjectClient) -> tuple[str, str]:
     """Return the latest voice-agent version and the specialist version it is pinned to."""
-    voice_agent = (await project.agents.get(VOICE_AGENT_NAME)).versions.latest
-    return str(voice_agent.version), str(voice_agent.definition["delegation"]["agent_version"])
+    voice_agent = await project.agents.get(VOICE_AGENT_NAME)
+    return str(voice_agent.versions.latest.version), delegated_specialist_version(voice_agent)
 
 
 def parse_args() -> argparse.Namespace:

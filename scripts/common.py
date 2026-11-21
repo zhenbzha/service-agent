@@ -7,6 +7,7 @@ from pathlib import Path
 
 from azure.ai.projects import AIProjectClient
 from azure.ai.projects.models import (
+    AgentDetails,
     LiveInitialSessionAudioOutputParam,
     LiveInitialSessionAudioParam,
     LiveSessionAudioFormatPCMParam,
@@ -17,6 +18,7 @@ from azure.ai.projects.models import (
     VoiceAgentLiveDefinition,
     VoiceAgentLiveManagedAgentDelegation,
     VoiceAgentTemplateGreetingConfig,
+    VoiceModelType,
 )
 from azure.identity import AzureDeveloperCliCredential
 from azure.identity.aio import AzureDeveloperCliCredential as AsyncAzureDeveloperCliCredential
@@ -83,10 +85,14 @@ def azd_credential_async() -> AsyncAzureDeveloperCliCredential:
     return AsyncAzureDeveloperCliCredential(tenant_id=require_env("AZURE_TENANT_ID"), process_timeout=60)
 
 
+def delegated_specialist_version(voice_agent: AgentDetails) -> str:
+    """The specialist version that the latest voice-agent version delegates to."""
+    return str(voice_agent.versions.latest.definition["delegation"]["agent_version"])
+
+
 def pinned_specialist_version(project: AIProjectClient) -> str:
     """The specialist version that callers actually reach through the voice agent."""
-    voice_agent = project.agents.get(VOICE_AGENT_NAME).versions.latest
-    return str(voice_agent.definition["delegation"]["agent_version"])
+    return delegated_specialist_version(project.agents.get(VOICE_AGENT_NAME))
 
 
 def read_agent_file(agent_name: str, file_name: str) -> str:
@@ -129,7 +135,7 @@ def voice_agent_definition(model: str, specialist_version: str) -> VoiceAgentLiv
     """GPT-Live voice agent that delegates billing work to a pinned specialist version."""
     definition = VoiceAgentLiveDefinition(
         model=model,
-        model_type="self_deployed",
+        model_type=VoiceModelType.SELF_DEPLOYED,
         instructions=read_agent_file(VOICE_AGENT_NAME, "instructions.md"),
         greeting=VoiceAgentTemplateGreetingConfig(text=read_agent_file(VOICE_AGENT_NAME, "greeting.txt")),
         audio=LiveInitialSessionAudioParam(

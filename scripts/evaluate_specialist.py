@@ -60,9 +60,11 @@ DATASET_PATH = REPO_ROOT / "evals" / "billing-specialist.jsonl"
 DEFINITION_HASH_KEY = "definition_sha256"
 
 POLL_SECONDS = 15
+RUN_TIMEOUT_SECONDS = 30 * 60
 FINISHED_STATUSES = {"completed", "failed", "canceled"}
 
-# Run-time fields that an agent target adds to each row (azd azure.ai.evaluations extension, build.go).
+# Run-time fields that an agent target adds to each row: output_text and output_items (Learn:
+# "Cloud evaluation targets") and tool_definitions (azd azure.ai.evaluations extension, build.go).
 QUERY = "{{item.query}}"
 ANSWER_TEXT = "{{sample.output_text}}"
 ANSWER_WITH_TOOL_CALLS = "{{sample.output_items}}"
@@ -206,9 +208,15 @@ def start_run(openai_client, evaluation_id: str, specialist_version: str, cases:
 
 
 def wait_for_run(openai_client, evaluation_id: str, run):
+    deadline = time.monotonic() + RUN_TIMEOUT_SECONDS
     status = run.status
     print(f"Run {run.id}: {status}")
     while run.status not in FINISHED_STATUSES:
+        if time.monotonic() > deadline:
+            raise TimeoutError(
+                f"Run {run.id} is still {run.status} after {RUN_TIMEOUT_SECONDS // 60} minutes; "
+                f"check it in the Foundry portal: {run.report_url}"
+            )
         time.sleep(POLL_SECONDS)
         run = openai_client.evals.runs.retrieve(run_id=run.id, eval_id=evaluation_id)
         if run.status != status:
@@ -306,14 +314,14 @@ def main() -> int:
     # The OpenAI SDK has no type for the Azure agent-target data source, so skip that serializer warning.
     print_summary(run.to_dict(warnings=False))
     counts = run.result_counts
-    all_passed = run.status == "completed" and counts and not counts.failed and not counts.errored
+    all_passed = run.status == "completed" and counts.total > 0 and counts.failed == 0 and counts.errored == 0
     return 0 if all_passed else 1
 
 
 if __name__ == "__main__":
     try:
         sys.exit(main())
-    except ConfigError as error:
+    except (ConfigError, TimeoutError) as error:
         sys.exit(f"Error: {error}")
     except HttpResponseError as error:
         sys.exit(f"Foundry request failed (HTTP {error.status_code}): {error.message}")

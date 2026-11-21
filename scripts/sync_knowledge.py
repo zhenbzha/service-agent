@@ -12,6 +12,7 @@ Usage: uv run scripts/sync_knowledge.py [--question "..."]
 import argparse
 import re
 import sys
+from itertools import batched
 from pathlib import Path
 
 from azure.core.exceptions import HttpResponseError
@@ -57,6 +58,8 @@ KNOWLEDGE_DESCRIPTION = "Zava Energy internal customer service handbooks, such a
 # The deployment name comes from azd; the model and its default vector size are fixed by the infra.
 EMBEDDING_MODEL = "text-embedding-3-large"
 EMBEDDING_DIMENSIONS = 3072
+# Learn "Quotas and limits": at most 8,192 tokens per input and 300,000 per request, so 32 pages fit.
+EMBEDDING_BATCH_SIZE = 32
 
 VECTOR_PROFILE = "content-vector-profile"
 VECTORIZER = "content-vectorizer"
@@ -102,9 +105,10 @@ def embedding_client(openai_endpoint: str, credential) -> OpenAI:
 
 
 def add_content_vectors(documents: list[dict], client: OpenAI, deployment: str) -> None:
-    response = client.embeddings.create(model=deployment, input=[document["content"] for document in documents])
-    for document, item in zip(documents, response.data, strict=True):
-        document["content_vector"] = item.embedding
+    for batch in batched(documents, EMBEDDING_BATCH_SIZE, strict=False):
+        response = client.embeddings.create(model=deployment, input=[document["content"] for document in batch])
+        for document, item in zip(batch, response.data, strict=True):
+            document["content_vector"] = item.embedding
 
 
 def search_index(openai_endpoint: str, embedding_deployment: str) -> SearchIndex:
