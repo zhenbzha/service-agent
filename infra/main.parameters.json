@@ -19,6 +19,9 @@
     },
     "deploySearch": {
       "value": "${DEPLOY_SEARCH=true}"
+    },
+    "webAppExists": {
+      "value": "${SERVICE_WEB_RESOURCE_EXISTS=false}"
     }
   }
 }

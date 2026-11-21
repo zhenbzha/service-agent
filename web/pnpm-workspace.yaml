@@ -1,0 +1,11 @@
+allowBuilds:
+  sharp: false
+  unrs-resolver: false
+
+# The Microsoft npm proxy is the default registry. Its tarballs are served from another host, so
+# pnpm-lock.yaml pins those tarball URLs, and every install (local and the container image build)
+# must use the same registry to pass pnpm's lockfile verification.
+# https://pnpm.io/registries
+registries:
+  https://packagefeedproxy.microsoft.io/npm/:
+    scopes: ["@"]

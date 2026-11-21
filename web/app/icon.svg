@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Zava Energy mark: a monogram "Z" in dark green on the lime accent (Tailwind lime-300). -->
+  <rect width="32" height="32" rx="9" fill="#bef264" />
+  <path
+    d="M10.5 10.75h11l-11 10.5h11"
+    fill="none"
+    stroke="#0c1b05"
+    stroke-width="2.6"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

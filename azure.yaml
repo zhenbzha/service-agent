@@ -7,3 +7,11 @@ infra:
   provider: bicep
   path: ./infra
   module: main
+
+services:
+  web:
+    project: ./web
+    language: ts
+    host: containerapp
+    docker:
+      remoteBuild: true

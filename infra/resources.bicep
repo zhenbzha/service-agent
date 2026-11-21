@@ -305,3 +305,4 @@ output knowledgeBaseName string = deploySearch ? knowledgeBaseName : ''
 output knowledgeBaseConnectionName string = deploySearch ? knowledgeBaseConnection.name : ''
 output knowledgeBaseMcpEndpoint string = knowledgeBaseMcpEndpoint
 output appInsightsConnectionString string = appInsights.outputs.connectionString
+output logAnalyticsWorkspaceResourceId string = logAnalytics.outputs.resourceId

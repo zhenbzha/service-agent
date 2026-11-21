@@ -1,0 +1,1711 @@
+[
+ {
+  "event_id": "event_EmQGTPEQgcGYn5fP13WZ9",
+  "type": "session.started",
+  "session": {
+   "id": "live_EmQGTzir3jPtcrhRbmdfj",
+   "audio": {
+    "output": {
+     "voice": "marin"
+    },
+    "format": {
+     "type": "audio/pcm",
+     "rate": 24000
+    }
+   }
+  },
+  "conversation_id": "conv_0bf1f8d978697aba0053GUnA6vLsIJJUaBpYGeDyVVeJphCtZu"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 0,
+  "end_ms": 200,
+  "delta": " Hi,",
+  "event_id": "event_EmQGUfNuOj6DiWcF2uaxO"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 200,
+  "end_ms": 400,
+  "delta": " thanks",
+  "event_id": "event_EmQGUrmSLRgDYwg3D3ck0"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 600,
+  "end_ms": 800,
+  "delta": " for calling",
+  "event_id": "event_EmQGV1fcrwzDrqRI3ytSg"
+ },
+ {
+  "type": "session.commentary.appended",
+  "start_ms": 600,
+  "end_ms": 800,
+  "event_id": "event_EmQGVrdyJGnXJYu5mJlQ6",
+  "client_event_id": "evt_01f7405f7a49b1a900yGUSiTVU34SZHyGeIdowpVSTBcgd1xNn"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 1000,
+  "end_ms": 1200,
+  "delta": " Zava",
+  "event_id": "event_EmQGVQfdbginBq9NOM2Xg"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 1200,
+  "end_ms": 1400,
+  "delta": " Energy.",
+  "event_id": "event_EmQGVmiFHOHUHmkUqijnU"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 1800,
+  "end_ms": 2000,
+  "delta": " I'm",
+  "event_id": "event_EmQGWUcDgSFMKKSP3cGo7"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 2000,
+  "end_ms": 2200,
+  "delta": " the",
+  "event_id": "event_EmQGWvXzqSBCZtvR6efby"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 2200,
+  "end_ms": 2400,
+  "delta": " virtual",
+  "event_id": "event_EmQGWLYe6uolP3IHWGUJW"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 2400,
+  "end_ms": 2600,
+  "delta": " assistant,",
+  "event_id": "event_EmQGWgptMrZ3HZHSUmfUJ"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 3000,
+  "end_ms": 3200,
+  "delta": " and",
+  "event_id": "event_EmQGX8FA0SI957QTUsbet"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 3200,
+  "end_ms": 3400,
+  "delta": " I'd be",
+  "event_id": "event_EmQGXjI4YmCVSdO1UiV6g"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 3400,
+  "end_ms": 3600,
+  "delta": " happy",
+  "event_id": "event_EmQGX89ie2llF6IVP91UG"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 3800,
+  "end_ms": 4000,
+  "delta": " to help",
+  "event_id": "event_EmQGY1QhEEiqeSxsEFkwr"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 4000,
+  "end_ms": 4200,
+  "delta": " with",
+  "event_id": "event_EmQGYHMBkVaEj4wAtLly3"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 4200,
+  "end_ms": 4400,
+  "delta": " bills",
+  "event_id": "event_EmQGYmoGGNYs6cflAy94b"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 4400,
+  "end_ms": 4600,
+  "delta": " or",
+  "event_id": "event_EmQGYK92DB8AmudFRmcyR"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 4600,
+  "end_ms": 4800,
+  "delta": " payments.",
+  "event_id": "event_EmQGZXkWGDPnBvJb4tuKM"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 5200,
+  "end_ms": 5400,
+  "delta": " What",
+  "event_id": "event_EmQGZPUBcvcMW06ZTFUdg"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 5400,
+  "end_ms": 5600,
+  "delta": " can I",
+  "event_id": "event_EmQGZJjvUrSG1ziNwDnCo"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 5600,
+  "end_ms": 5800,
+  "delta": " do for",
+  "event_id": "event_EmQGaaniDMrkRkV03kpAz"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 5800,
+  "end_ms": 6000,
+  "delta": " you",
+  "event_id": "event_EmQGasUiyUfjBevlPXcoM"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 6000,
+  "end_ms": 6200,
+  "delta": " today?",
+  "event_id": "event_EmQGalBytMhdp3QG2jqch"
+ },
+ {
+  "type": "session.delegation.created",
+  "event_id": "evt_typed_run_652700b0afab4404b0f470dfd166fbce",
+  "offset_ms": 10532,
+  "delegation": {
+   "id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+   "type": "delegation",
+   "target": "foundry_managed_agent"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_9248afad18f84c3890bbe3240ffb1200",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.created",
+   "sequence_number": 0,
+   "response": {
+    "id": "resp_06ebc41ead82366d006b00b8d19b9081909863fd2027df1831",
+    "status": "in_progress",
+    "model": "gpt-5.5",
+    "agent_reference": {
+     "type": "agent_reference",
+     "name": "billing-specialist",
+     "version": "6"
+    },
+    "error": null,
+    "incomplete_details": null
+   }
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_fa00fb924a55466993b15b6c04a2fe78",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.in_progress",
+   "sequence_number": 1,
+   "response": {
+    "id": "resp_06ebc41ead82366d006b00b8d19b9081909863fd2027df1831",
+    "status": "in_progress",
+    "model": "gpt-5.5",
+    "agent_reference": {
+     "type": "agent_reference",
+     "name": "billing-specialist",
+     "version": "6"
+    },
+    "error": null,
+    "incomplete_details": null
+   }
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_03e2a8b1877f498892f9be2059cf78be",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_item.added",
+   "sequence_number": 2,
+   "output_index": 0,
+   "item": {
+    "type": "mcp_list_tools",
+    "id": "mcpl_06ebc41ead82366d006b00b8d1b96081909c347c2bab8e5df3",
+    "server_label": "knowledge-base"
+   }
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_7006faaed1674f56a240b948b330beca",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.mcp_list_tools.in_progress",
+   "sequence_number": 3,
+   "item_id": "mcpl_06ebc41ead82366d006b00b8d1b96081909c347c2bab8e5df3",
+   "output_index": 0
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_68f500a00ec345a2874ec54246fc32ba",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.mcp_list_tools.completed",
+   "sequence_number": 4,
+   "item_id": "mcpl_06ebc41ead82366d006b00b8d1b96081909c347c2bab8e5df3",
+   "output_index": 0
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_fff78789b02f44c38b12adf0157ed71f",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_item.done",
+   "sequence_number": 5,
+   "output_index": 0,
+   "item": {
+    "type": "mcp_list_tools",
+    "id": "mcpl_06ebc41ead82366d006b00b8d1b96081909c347c2bab8e5df3",
+    "server_label": "knowledge-base"
+   }
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_223ab144ebf6405f9a5a9c7f8f748853",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_item.added",
+   "sequence_number": 8,
+   "output_index": 2,
+   "item": {
+    "type": "mcp_call",
+    "id": "mcp_06ebc41ead82366d006b00b8d4378481909b4aa232c7475222",
+    "status": "calling",
+    "name": "knowledge_base_retrieve",
+    "server_label": "knowledge-base",
+    "arguments": ""
+   }
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_4144a929ace54c448be6243d43a46a65",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.mcp_call.in_progress",
+   "sequence_number": 9,
+   "item_id": "mcp_06ebc41ead82366d006b00b8d4378481909b4aa232c7475222",
+   "output_index": 2
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_9ef909e0f3bb4bcf867540bac32d7c65",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.mcp_call_arguments.delta",
+   "sequence_number": 10,
+   "item_id": "mcp_06ebc41ead82366d006b00b8d4378481909b4aa232c7475222",
+   "output_index": 2,
+   "delta": "{\"queries\":[\"estimated meter reading invoice correction actual reading\",\"high bill estimated consumption fixed price\"]}",
+   "obfuscation": "FiCHzW75i"
+  }
+ },
+ {
+  "type": "session.usage.updated",
+  "usage": {
+   "seconds": 14.0
+  },
+  "event_id": "event_EmQGilb2CXaeYckWcYSQF"
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_be6c946b08a94380b5208a1fdf789622",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.mcp_call_arguments.done",
+   "sequence_number": 11,
+   "item_id": "mcp_06ebc41ead82366d006b00b8d4378481909b4aa232c7475222",
+   "output_index": 2,
+   "arguments": "{\"queries\":[\"estimated meter reading invoice correction actual reading\",\"high bill estimated consumption fixed price\"]}"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_32c8eacff18146df8ac98d6ab40bb101",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.mcp_call.completed",
+   "sequence_number": 12,
+   "item_id": "mcp_06ebc41ead82366d006b00b8d4378481909b4aa232c7475222",
+   "output_index": 2
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_14280f09567b485fb470601a662d613f",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_item.done",
+   "sequence_number": 13,
+   "output_index": 2,
+   "item": {
+    "type": "mcp_call",
+    "id": "mcp_06ebc41ead82366d006b00b8d4378481909b4aa232c7475222",
+    "status": "completed",
+    "name": "knowledge_base_retrieve",
+    "server_label": "knowledge-base",
+    "arguments": "{\"queries\":[\"estimated meter reading invoice correction actual reading\",\"high bill estimated consumption fixed price\"]}",
+    "output": "{\"documents\": [{\"id\": \"57bc811f-05b9-492c-97c8-135a6e310fb0\", \"content\": \"{\\\"id\\\": \\\"zava-energy-billing-handbook-page-5\\\", \\\"file_name\\\": \\\"zava-energy-billing-handbook.pdf\\\", \\\"page_number\\\": 5, \\\"content\\\": \\\"Page 5Zava Energy \\\\u00b7 CS-BIL-001 v3.2 \\\\u00b7 Internal \\\\u00b7 Fictional c\\\\u2026\\\"}\", \"title\": \"https://srch-qteopgpuqalna.search.windows.net/indexes/zava-energy-knowledge/docs/zava-energy-billing-handbook-page-5?$select=content%2Cid%2Cfile_name%2Cpage_number&api-version=2026-10-01&allowUnsafeKeys=true\", \"url\": \"https://srch-qteopgpuqalna.search.windows.net/indexes/zava-energy-knowledge/docs/zava-energy-billing-handbook-page-5?$select=content%2Cid%2Cfile_name%2Cpage_number&api-version=2026-10-01&allowUnsafeKeys=true\", \"metadata\": \"application/json\", \"knowledgeSourceIndex\": 0}, {\"id\": \"41303acc-42a8-4a71-8b7d-31cddedb7f54\", \"content\": \"{\\\"id\\\": \\\"zava-energy-billing-handbook-page-2\\\", \\\"file_name\\\": \\\"zava-energy-billing-handbook.pdf\\\", \\\"page_number\\\": 2, \\\"content\\\": \\\"Page 2Zava Energy \\\\u00b7 CS-BIL-001 v3.2 \\\\u00b7 Internal \\\\u00b7 Fictional c\\\\u2026\\\"}\", \"title\": \"https://srch-qteopgpuqalna.search.windows.net/indexes/zava-energy-knowledge/docs/zava-energy-billing-handbook-page-2?$select=content%2Cid%2Cfile_name%2Cpage_number&api-version=2026-10-01&allowUnsafeKeys=true\", \"url\": \"https://srch-qteopgpuqalna.search.windows.net/indexes/zava-energy-knowledge/docs/zava-energy-billing-handbook-page-2?$select=content%2Cid%2Cfile_name%2Cpage_number&api-version=2026-10-01&allowUnsafeKeys=true\", \"metadata\": \"application/json\", \"knowledgeSourceIndex\": 0}, {\"id\": \"bdfa2f2f-c96c-4e90-b75b-dd82832d4f95\", \"content\": \"{\\\"id\\\": \\\"zava-energy-billing-handbook-page-4\\\", \\\"file_name\\\": \\\"zava-energy-billing-handbook.pdf\\\", \\\"page_number\\\": 4, \\\"content\\\": \\\"Page 4Zava Energy \\\\u00b7 CS-BIL-001 v3.2 \\\\u00b7 Internal \\\\u00b7 Fictional c\\\\u2026\\\"}\", \"title\": \"https://srch-qteopgpuqalna.search.windows.net/indexes/zava-energy-knowledge/docs/zava-energy-billing-handbook-page-4?$select=content%2Cid%2Cfile_name%2Cpage_number&api-version=2026-10-01&allowUnsafeKeys=true\", \"url\": \"https://srch-qteopgpuqalna.search.windows.net/indexes/zava-energy-knowledge/docs/zava-energy-billing-handbook-page-4?$select=content%2Cid%2Cfile_name%2Cpage_number&api-version=2026-10-01&allowUnsafeKeys=true\", \"metadata\": \"application/json\", \"knowledgeSourceIndex\": 0}, {\"id\": \"929e810b-bfd9-4e75-ab02-8929594f30ef\", \"content\": \"{\\\"id\\\": \\\"zava-energy-billing-handbook-page-6\\\", \\\"file_name\\\": \\\"zava-energy-billing-handbook.pdf\\\", \\\"page_number\\\": 6, \\\"content\\\": \\\"Page 6Zava Energy \\\\u00b7 CS-BIL-001 v3.2 \\\\u00b7 Internal \\\\u00b7 Fictional c\\\\u2026\\\"}\", \"title\": \"https://srch-qteopgpuqalna.search.windows.net/indexes/zava-energy-knowledge/docs/zava-energy-billing-handbook-page-6?$select=content%2Cid%2Cfile_name%2Cpage_number&api-version=2026-10-01&allowUnsafeKeys=true\", \"url\": \"https://srch-qteopgpuqalna.search.windows.net/indexes/zava-energy-knowledge/docs/zava-energy-billing-handbook-page-6?$select=content%2Cid%2Cfile_name%2Cpage_number&api-version=2026-10-01&allowUnsafeKeys=true\", \"metadata\": \"application/json\", \"knowledgeSourceIndex\": 0}, {\"id\": \"1367aa52-b7a6-4cbc-873f-6cfab409fe87\", \"content\": \"{\\\"id\\\": \\\"zava-energy-billing-handbook-page-1\\\", \\\"file_name\\\": \\\"zava-energy-billing-handbook.pdf\\\", \\\"page_number\\\": 1, \\\"content\\\": \\\"Page 1Zava Energy \\\\u00b7 CS-BIL-001 v3.2 \\\\u00b7 Internal \\\\u00b7 Fictional c\\\\u2026\\\"}\", \"title\": \"https://srch-qteopgpuqalna.search.windows.net/indexes/zava-energy-knowledge/docs/zava-energy-billing-handbook-page-1?$select=content%2Cid%2Cfile_name%2Cpage_number&api-version=2026-10-01&allowUnsafeKeys=true\", \"url\": \"https://srch-qteopgpuqalna.search.windows.net/indexes/zava-energy-knowledge/docs/zava-energy-billing-handbook-page-1?$select=content%2Cid%2Cfile_name%2Cpage_number&api-version=2026-10-01&allowUnsafeKeys=true\", \"metadata\": \"application/json\", \"knowledgeSourceIndex\": 0}]}"
+   }
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_d2751dbf7e724bd18482534184d14101",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_item.added",
+   "sequence_number": 16,
+   "output_index": 4,
+   "item": {
+    "type": "message",
+    "id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+    "status": "in_progress",
+    "role": "assistant",
+    "phase": "final_answer",
+    "content": []
+   }
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_56e034c7dc7e49c09d6acf63f78470e8",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.content_part.added",
+   "sequence_number": 17,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "part": {
+    "type": "output_text",
+    "text": "",
+    "annotations": [],
+    "logprobs": []
+   }
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_f6be4b0767aa4ebdabc820615df98d52",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 18,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": "[",
+   "logprobs": [],
+   "obfuscation": "bIs19j4hAL1P7kF"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_c2b95664a9494dea908f2e24f3bf8671",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 19,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": "comment",
+   "logprobs": [],
+   "obfuscation": "oq3TEyjd4"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_51d7fc94197a47b99dc3d6294c838947",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 20,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": "ary",
+   "logprobs": [],
+   "obfuscation": "yE3lEnWoNZoq7"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_806c56e112a740198aba9b3d09f4f9d5",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 21,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": "]",
+   "logprobs": [],
+   "obfuscation": "pqy2pEJ5eKKvHKQ"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_e1855e95d0a24d8486a1b0d423545af6",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 22,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " Your",
+   "logprobs": [],
+   "obfuscation": "DMtfrIlW37f"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_64ea84c630004f66b92fec00e2a75e92",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 23,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " October",
+   "logprobs": [],
+   "obfuscation": "TDuYirGJ"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_46e7c59d140d43e19b6fb3f6879a54d2",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 24,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " bill",
+   "logprobs": [],
+   "obfuscation": "i69S7BK0w87"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_f927061e9371462390da48b2673fdd42",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 25,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " is",
+   "logprobs": [],
+   "obfuscation": "jaR0qaudP001J"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_9886f1df25ba444bbb7493c0b56d3e39",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 26,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " high",
+   "logprobs": [],
+   "obfuscation": "KmbT4fAtotM"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_f750114a542243b581d61e86f64e1d9c",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 27,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " because",
+   "logprobs": [],
+   "obfuscation": "Kfm6uWyf"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_85c7de564b3b4b1d8613d12dc32c1198",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 28,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " it",
+   "logprobs": [],
+   "obfuscation": "m701SylEz32Um"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_08b08b03a946488ca3454f28d4ec2c98",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 29,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " was",
+   "logprobs": [],
+   "obfuscation": "tJoJdJP1eaRp"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_f76de1d1cda14d9bb8d7c8fee5075285",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 30,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " based",
+   "logprobs": [],
+   "obfuscation": "D1AXjzX1wZ"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_4764ca72bf8740cc89dd09ab76d532fe",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 31,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " on",
+   "logprobs": [],
+   "obfuscation": "73OzyM9UFV2Ve"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_a1609c3007ff4eafb4dd337a20b45ced",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 32,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " an",
+   "logprobs": [],
+   "obfuscation": "3at1H9imWy7us"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_67e0f73636374ef497e9426786bdf1fd",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 33,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " estimated",
+   "logprobs": [],
+   "obfuscation": "ROAZlS"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_310f19928a3f4e759e9727f9038be2e1",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 34,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " 1",
+   "logprobs": [],
+   "obfuscation": "UfOjt6KnMQt2JK"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_1ea7efa32daf4f4b8511fc453ea30ca5",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 35,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": ",450",
+   "logprobs": [],
+   "obfuscation": "2D3iWhRUHVxh"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_4bbd168a1b0e49f090ef4830df1affa5",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 36,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " kilowatt",
+   "logprobs": [],
+   "obfuscation": "p9XWILq"
+  }
+ },
+ {
+  "type": "session.usage.updated",
+  "usage": {
+   "seconds": 29.0
+  },
+  "event_id": "event_EmQGxI5yA6TBn0icYyNqo"
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_0c25b1f12f344c58ad0b4fe709a3f122",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 37,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " hours,",
+   "logprobs": [],
+   "obfuscation": "bAaTBBMQH"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_f84da3431f664574b8335ded34243e9b",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 38,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " making it",
+   "logprobs": [],
+   "obfuscation": "19tWVy"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_9ccc853afcd34470844274ba3e930295",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 39,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " 147",
+   "logprobs": [],
+   "obfuscation": "FLafRmIPqup2"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_0eb269ea115d40f6912dd0d26c32fd2e",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 40,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " euros and",
+   "logprobs": [],
+   "obfuscation": "eVgJ7V"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_8d61eb03d1b948848b85131a2e0306e4",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 41,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " 0 cents",
+   "logprobs": [],
+   "obfuscation": "YTC78cR9"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_8eeed34f0c9842dc935701a03b5a34c1",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 42,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": ", compared with",
+   "logprobs": [],
+   "obfuscation": "g"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_ec4a551880274dc18437c34af669a090",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 43,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " 690 kil",
+   "logprobs": [],
+   "obfuscation": "uGeGwaF0"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_a42fb7e86bb841cf86181753899c15b8",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 44,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": "owatt hours and",
+   "logprobs": [],
+   "obfuscation": "E"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_355eeacdb41644e78f78aa5bee402f66",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 45,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " 72 euros",
+   "logprobs": [],
+   "obfuscation": "jettxjl"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_fe01865f01c94c75b80e42173f0f9ae6",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 46,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " and 52",
+   "logprobs": [],
+   "obfuscation": "kH4U3taqO"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_72c34425e7c44820817d0db85a4e71ad",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 47,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " cents in September",
+   "logprobs": [],
+   "obfuscation": "LH6eXJ6Xz5Yj2"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_7afd85c1673443299b9eac6fec4cb3fa",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 48,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": ".",
+   "logprobs": [],
+   "obfuscation": "wAU2qvDJTbuKMBt"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_aa1ff3aa96bd42099f2ef0a36e9e80fc",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 49,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " An actual October reading",
+   "logprobs": [],
+   "obfuscation": "pZUgKF"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_3899d4c1a9bf418297e2dab2b8965c5d",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 50,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " later came in at",
+   "logprobs": [],
+   "obfuscation": "2f30sy4og6QZ0QO"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_985d70f9999f405aaf669cd75ce2f042",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 51,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " 720 kilowatt hours",
+   "logprobs": [],
+   "obfuscation": "RkCXIv83IRQe3"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_f8e2985c63554c5487d271e824ffc394",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 52,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": ", so the estimate appears",
+   "logprobs": [],
+   "obfuscation": "zjiNzvK"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_85e034de3abc40c2bdbab979ffb1b863",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 53,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " about 730 kilowatt",
+   "logprobs": [],
+   "obfuscation": "tm0D7c1kKiI0C"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_412a27696091445a8a62637077698b5a",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 54,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " hours too high. A billing",
+   "logprobs": [],
+   "obfuscation": "KmkXIG"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_44b29cd5e1f44fa28240154fdda72e6e",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 55,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " advisor can review",
+   "logprobs": [],
+   "obfuscation": "gHxDR2VDesnZv"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_b0437850108f4056992439099dd2d0b9",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 56,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " this for a correction or credit",
+   "logprobs": [],
+   "obfuscation": ""
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_850dc223f0384da2b7507f4f4be28ee1",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 57,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": "; they’re available Monday to Friday",
+   "logprobs": [],
+   "obfuscation": "6fOoz0wkhJ4S"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_bd771ef9feea458fb3306a3924e25cde",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 58,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": ",",
+   "logprobs": [],
+   "obfuscation": "F1CVpbxfiyhO6Hk"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_505dc9df039343af9ed38e6bc3b3e155",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 59,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": " 09:00 to 17",
+   "logprobs": [],
+   "obfuscation": "f0EI"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_5476e38dbccc42c29f95d42211ba8205",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.delta",
+   "sequence_number": 60,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "delta": ":00.",
+   "logprobs": [],
+   "obfuscation": "OJLZp37nOj7Q"
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_bdcad7b5a132468c84c58ee592304f7c",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_text.done",
+   "sequence_number": 61,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "text": "[commentary] Your October bill is high because it was based on an estimated 1,450 kilowatt hours, making it 147 euros and 0 cents, compared with 690 kilowatt hours and 72 euros and 52 cents in September. An actual October reading later came in at 720 kilowatt hours, so the estimate appears about 730 kilowatt hours too high. A billing advisor can review this for a correction or credit; they’re available Monday to Friday, 09:00 to 17:00.",
+   "logprobs": []
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_652f0d8b4a3346e2b970446ccecb79f8",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.content_part.done",
+   "sequence_number": 62,
+   "item_id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+   "output_index": 4,
+   "content_index": 0,
+   "part": {
+    "type": "output_text",
+    "text": "[commentary] Your October bill is high because it was based on an estimated 1,450 kilowatt hours, making it 147 euros and 0 cents, compared with 690 kilowatt hours and 72 euros and 52 cents in September. An actual October reading later came in at 720 kilowatt hours, so the estimate appears about 730 kilowatt hours too high. A billing advisor can review this for a correction or credit; they’re available Monday to Friday, 09:00 to 17:00.",
+    "annotations": [],
+    "logprobs": []
+   }
+  }
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_76eb278de0f248ff83280f9c96de9cfb",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.output_item.done",
+   "sequence_number": 63,
+   "output_index": 4,
+   "item": {
+    "type": "message",
+    "id": "msg_06ebc41ead82366d006b00b8e2f5808190abbc4964c38a5df3",
+    "status": "completed",
+    "role": "assistant",
+    "phase": "final_answer",
+    "content": [
+     {
+      "type": "output_text",
+      "text": "[commentary] Your October bill is high because it was based on an estimated 1,450 kilowatt hours, making it 147 euros and 0 cents, compared with 690 kilowatt hours and 72 euros and 52 cents in September. An actual October reading later came in at 720 kilowatt hours, so the estimate appears about 730 kilowatt hours too high. A billing advisor can review this for a correction or credit; they’re available Monday to Friday, 09:00 to 17:00.",
+      "annotations": [],
+      "logprobs": []
+     }
+    ]
+   }
+  }
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 30800,
+  "end_ms": 31000,
+  "delta": " Okay,",
+  "event_id": "event_EmQGzuxKPbiTwlKprEbmT"
+ },
+ {
+  "type": "session.commentary.appended",
+  "start_ms": 30800,
+  "end_ms": 31200,
+  "event_id": "event_EmQGzF1ZC2C2vtoCYWxKF",
+  "client_event_id": "evt_managed_7605caceba1a45f8ab78ed8726e3bb24",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872"
+ },
+ {
+  "type": "response.event",
+  "event_id": "evt_backend_e49f65d2950e465099a2263ec30ed7c9",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "event": {
+   "type": "response.completed",
+   "sequence_number": 64,
+   "response": {
+    "id": "resp_06ebc41ead82366d006b00b8d19b9081909863fd2027df1831",
+    "status": "completed",
+    "model": "gpt-5.5",
+    "agent_reference": {
+     "type": "agent_reference",
+     "name": "billing-specialist",
+     "version": "6"
+    },
+    "error": null,
+    "incomplete_details": null
+   }
+  }
+ },
+ {
+  "type": "session.delegation.done",
+  "event_id": "evt_managed_done_50dd882776164efebbfeea955379fc6c",
+  "delegation_id": "fdel_04985218d5c54d47a807e0ae48c2a872",
+  "status": "completed",
+  "error_code": null,
+  "response_id": "resp_06ebc41ead82366d006b00b8d19b9081909863fd2027df1831",
+  "partial": false,
+  "observations_truncated": false
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 31200,
+  "end_ms": 31400,
+  "delta": " I",
+  "event_id": "event_EmQGzEMtgeg46DRVORR1e"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 31400,
+  "end_ms": 31600,
+  "delta": " see",
+  "event_id": "event_EmQGzhLn5wBvXg3rpUG8G"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 31600,
+  "end_ms": 31800,
+  "delta": " what",
+  "event_id": "event_EmQH0PjCN73avOoqLzNmL"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 31800,
+  "end_ms": 32000,
+  "delta": " happened.",
+  "event_id": "event_EmQH0hswFdhvx1Pg7dxM7"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 32200,
+  "end_ms": 32400,
+  "delta": " Your",
+  "event_id": "event_EmQH0DAgG6DxnDNuKvHe4"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 32400,
+  "end_ms": 32600,
+  "delta": " October",
+  "event_id": "event_EmQH0w4weXZ1ez1uxDItO"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 33000,
+  "end_ms": 33200,
+  "delta": " bill",
+  "event_id": "event_EmQH15gZfflQ7EIfLFrp2"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 33200,
+  "end_ms": 33400,
+  "delta": " jumped",
+  "event_id": "event_EmQH1aGesOaicuAHSIGrn"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 33600,
+  "end_ms": 33800,
+  "delta": " because",
+  "event_id": "event_EmQH26DjIHJKepnqisvyK"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 33800,
+  "end_ms": 34000,
+  "delta": " it was",
+  "event_id": "event_EmQH2cowp1Oyc002PQDJB"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 34000,
+  "end_ms": 34200,
+  "delta": " estimated",
+  "event_id": "event_EmQH2WO9wZABIlPnyLLls"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 34600,
+  "end_ms": 34800,
+  "delta": " at",
+  "event_id": "event_EmQH2viXJdNjST1hqPlyk"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 34800,
+  "end_ms": 35000,
+  "delta": " about",
+  "event_id": "event_EmQH307M1W7k4rozRPkdB"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 35000,
+  "end_ms": 35200,
+  "delta": " ",
+  "event_id": "event_EmQH30Rdg4UB0H7OFC2hn"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 35200,
+  "end_ms": 35400,
+  "delta": "forty",
+  "event_id": "event_EmQH3VxIDItqW0itqHAXv"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 35400,
+  "end_ms": 35600,
+  "delta": " seven",
+  "event_id": "event_EmQH3x85EPEFTtykUqeTz"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 35800,
+  "end_ms": 36000,
+  "delta": " euros",
+  "event_id": "event_EmQH4qBdIWqypGxabLQIR"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 36600,
+  "end_ms": 36800,
+  "delta": " for",
+  "event_id": "event_EmQH51A2PU9YeOnaV8LeL"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 36800,
+  "end_ms": 37000,
+  "delta": " about",
+  "event_id": "event_EmQH5Oi1Kz2ufYq4gnqSV"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 37400,
+  "end_ms": 37600,
+  "delta": " fourteen",
+  "event_id": "event_EmQH5UfdpEP5ygMxglw58"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 37600,
+  "end_ms": 37800,
+  "delta": " fifty",
+  "event_id": "event_EmQH6y2CCknOcTJgFpVfv"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 38000,
+  "end_ms": 38200,
+  "delta": " kilowatt",
+  "event_id": "event_EmQH6fCjlFjQRQ9CpyWRM"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 38400,
+  "end_ms": 38600,
+  "delta": " hours,",
+  "event_id": "event_EmQH6xEi3lv1rGEPajHOb"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 39200,
+  "end_ms": 39400,
+  "delta": " while",
+  "event_id": "event_EmQH7KK9NigZLnqucIMzA"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 39400,
+  "end_ms": 39600,
+  "delta": " September",
+  "event_id": "event_EmQH7mBc03bYpmcBTXmVH"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 40000,
+  "end_ms": 40200,
+  "delta": " was",
+  "event_id": "event_EmQH8IrWE3wnTmVU5ePgk"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 40200,
+  "end_ms": 40400,
+  "delta": " only",
+  "event_id": "event_EmQH8mIMoILRbqXkiWcdC"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 40400,
+  "end_ms": 40600,
+  "delta": " about",
+  "event_id": "event_EmQH8lkJMXaOuzV0LYHV8"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 40600,
+  "end_ms": 40800,
+  "delta": " ",
+  "event_id": "event_EmQH9vqnA9OPaJ5QKHbyJ"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 40800,
+  "end_ms": 41000,
+  "delta": "seventy",
+  "event_id": "event_EmQH9Kb1ZJtcZg66voiHi"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 41000,
+  "end_ms": 41200,
+  "delta": " three",
+  "event_id": "event_EmQH9seSwtYgCpR3bU6nE"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 41400,
+  "end_ms": 41600,
+  "delta": " euros",
+  "event_id": "event_EmQH9w7KAUOHBq5VTB2mp"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 42000,
+  "end_ms": 42200,
+  "delta": " for",
+  "event_id": "event_EmQHAWj0GyNIYBMFFaj6X"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 42400,
+  "end_ms": 42600,
+  "delta": " ",
+  "event_id": "event_EmQHAQl9WgYgv56Qgdihw"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 42600,
+  "end_ms": 42800,
+  "delta": "six",
+  "event_id": "event_EmQHB74H6YwJbmPDag4SW"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 43000,
+  "end_ms": 43200,
+  "delta": " ninety",
+  "event_id": "event_EmQHBaRXqWUt4rt7LUe9c"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 43200,
+  "end_ms": 43400,
+  "delta": " kilowatt",
+  "event_id": "event_EmQHBD099HzPrbXMWh2Ow"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 43600,
+  "end_ms": 43800,
+  "delta": " hours.",
+  "event_id": "event_EmQHCLhhvbpP48vmw2Rpb"
+ },
+ {
+  "type": "session.usage.updated",
+  "usage": {
+   "seconds": 44.0
+  },
+  "event_id": "event_EmQHCqOmfWD077tNAv9Xm"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 44200,
+  "end_ms": 44400,
+  "delta": " We",
+  "event_id": "event_EmQHCY8bKa3vVuYrJ6uCW"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 44600,
+  "end_ms": 44800,
+  "delta": " got",
+  "event_id": "event_EmQHDTJzOxQvqysmCXO12"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 44800,
+  "end_ms": 45000,
+  "delta": " an actual",
+  "event_id": "event_EmQHDE7NGBwHtYCrzQe9S"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 45200,
+  "end_ms": 45400,
+  "delta": " reading",
+  "event_id": "event_EmQHDeEXupHW0IGAyEs1Y"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 45600,
+  "end_ms": 45800,
+  "delta": " later",
+  "event_id": "event_EmQHDZEbFtqlQgc4gXOKy"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 46000,
+  "end_ms": 46200,
+  "delta": " at",
+  "event_id": "event_EmQHEPG8mYpX7Rbh3XIEv"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 46200,
+  "end_ms": 46400,
+  "delta": " seven",
+  "event_id": "event_EmQHEjjTjpYgccJdL3upG"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 46400,
+  "end_ms": 46600,
+  "delta": " twenty",
+  "event_id": "event_EmQHEYCRiohi46btT0bZI"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 46800,
+  "end_ms": 47000,
+  "delta": " kilowatt",
+  "event_id": "event_EmQHFhUDS8IRjZdbdJrFw"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 47200,
+  "end_ms": 47400,
+  "delta": " hours,",
+  "event_id": "event_EmQHFzVGl0u0K41Xc3OSj"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 47800,
+  "end_ms": 48000,
+  "delta": " so",
+  "event_id": "event_EmQHGsyPtT8NUGHIZrFd4"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 48000,
+  "end_ms": 48200,
+  "delta": " the",
+  "event_id": "event_EmQHGmOVXWjDqhzV3NNMN"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 48400,
+  "end_ms": 48600,
+  "delta": " estimate",
+  "event_id": "event_EmQHGipxTzfrccJj4wDek"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 48600,
+  "end_ms": 48800,
+  "delta": " looks",
+  "event_id": "event_EmQHHaQZ3LM62wta0f680"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 49000,
+  "end_ms": 49200,
+  "delta": " way",
+  "event_id": "event_EmQHH9LhJ8d1OTZz89F4r"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 49400,
+  "end_ms": 49600,
+  "delta": " too",
+  "event_id": "event_EmQHHDNSgo1tJlgoHpxW7"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 49600,
+  "end_ms": 49800,
+  "delta": " high.",
+  "event_id": "event_EmQHIP2XWiFXRvjhZte7t"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 50400,
+  "end_ms": 50600,
+  "delta": " A billing",
+  "event_id": "event_EmQHIQPXzmqgXeFhDmNan"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 50800,
+  "end_ms": 51000,
+  "delta": " advisor",
+  "event_id": "event_EmQHJ7GO3E7TAclc5ujiA"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 51200,
+  "end_ms": 51400,
+  "delta": " can",
+  "event_id": "event_EmQHJLuUflqN6bkzF184V"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 51400,
+  "end_ms": 51600,
+  "delta": " review",
+  "event_id": "event_EmQHJQDux9W3fhTVgcN12"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 51600,
+  "end_ms": 51800,
+  "delta": " this",
+  "event_id": "event_EmQHKGDGHKwCoHoaSqt6E"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 51800,
+  "end_ms": 52000,
+  "delta": " for",
+  "event_id": "event_EmQHKeq8VootFUiYu2JtG"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 52000,
+  "end_ms": 52200,
+  "delta": " a",
+  "event_id": "event_EmQHKfZtmPw3l8BotZVTF"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 52200,
+  "end_ms": 52400,
+  "delta": " correction",
+  "event_id": "event_EmQHKD47TMmMZlBopX8rd"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 52600,
+  "end_ms": 52800,
+  "delta": " or",
+  "event_id": "event_EmQHLh0ndUJTdiXqCfof9"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 52800,
+  "end_ms": 53000,
+  "delta": " credit.",
+  "event_id": "event_EmQHLEozMzFhnNeXYPY70"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 53200,
+  "end_ms": 53400,
+  "delta": " They're",
+  "event_id": "event_EmQHLsm1626ZE2i9dwkwe"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 53400,
+  "end_ms": 53600,
+  "delta": " available",
+  "event_id": "event_EmQHL73ut2AuUH8PKeYT0"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 54000,
+  "end_ms": 54200,
+  "delta": " Mondays",
+  "event_id": "event_EmQHMUudOs4xQqDwgskQz"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 54200,
+  "end_ms": 54400,
+  "delta": " to",
+  "event_id": "event_EmQHMUxVyoTJpYg2SIgBB"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 54400,
+  "end_ms": 54600,
+  "delta": " Fridays,",
+  "event_id": "event_EmQHM5vZvYkxkWM37WEtq"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 55000,
+  "end_ms": 55200,
+  "delta": " nine",
+  "event_id": "event_EmQHN6DFpwhjQpGW7JRPh"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 55200,
+  "end_ms": 55400,
+  "delta": " to five",
+  "event_id": "event_EmQHNAB9iJhUnxXNyBbol"
+ },
+ {
+  "type": "session.output_transcript.delta",
+  "start_ms": 55400,
+  "end_ms": 55600,
+  "delta": ".",
+  "event_id": "event_EmQHNIyfqKEwlWjnEVZc7"
+ },
+ {
+  "type": "session.usage.updated",
+  "usage": {
+   "seconds": 59.0
+  },
+  "event_id": "event_EmQHRq4iui7jYj7DSpBO7"
+ },
+ {
+  "event_id": "event_EmQHSEQlgI2Oz4vxt0yuc",
+  "type": "session.closed",
+  "reason": "close_requested",
+  "session": {
+   "id": "live_EmQGTzir3jPtcrhRbmdfj",
+   "audio": {
+    "output": {
+     "voice": "marin"
+    },
+    "format": {
+     "type": "audio/pcm",
+     "rate": 24000
+    }
+   }
+  },
+  "usage": {
+   "seconds": 59.0
+  }
+ }
+]

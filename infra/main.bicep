@@ -57,6 +57,9 @@ param embeddingModel modelType = {
 @description('Deploy Azure AI Search for the knowledge base. The billing specialist needs it for the handbook. Basic tier has a fixed monthly cost.')
 param deploySearch bool = true
 
+@description('Whether the web container app already exists. azd sets SERVICE_WEB_RESOURCE_EXISTS so provisioning keeps the deployed image.')
+param webAppExists bool = false
+
 var tags = {
   'azd-env-name': environmentName
   workload: 'voice-service-agent'
@@ -93,6 +96,24 @@ module resources 'resources.bicep' = {
   ]
 }
 
+module web 'web.bicep' = {
+  name: 'web-${resourceToken}'
+  scope: az.resourceGroup(resourceGroupName)
+  params: {
+    location: location
+    tags: tags
+    resourceToken: resourceToken
+    environmentName: environmentName
+    principalId: principalId
+    webAppExists: webAppExists
+    logAnalyticsWorkspaceResourceId: resources.outputs.logAnalyticsWorkspaceResourceId
+    foundryProjectEndpoint: resources.outputs.projectEndpoint
+  }
+  dependsOn: [
+    resourceGroup
+  ]
+}
+
 output AZURE_LOCATION string = location
 output AZURE_TENANT_ID string = tenant().tenantId
 output AZURE_RESOURCE_GROUP string = resourceGroup.outputs.name
@@ -109,3 +130,6 @@ output KNOWLEDGE_BASE_NAME string = resources.outputs.knowledgeBaseName
 output KNOWLEDGE_BASE_CONNECTION_NAME string = resources.outputs.knowledgeBaseConnectionName
 output KNOWLEDGE_BASE_MCP_ENDPOINT string = resources.outputs.knowledgeBaseMcpEndpoint
 output APPLICATIONINSIGHTS_CONNECTION_STRING string = resources.outputs.appInsightsConnectionString
+output AZURE_CONTAINER_REGISTRY_ENDPOINT string = web.outputs.containerRegistryLoginServer
+output ENTRA_WEB_CLIENT_ID string = web.outputs.entraWebClientId
+output WEB_URI string = web.outputs.webUri
