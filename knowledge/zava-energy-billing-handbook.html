@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Zava Energy - Billing and Payments Handbook</title>
+<style>
+  @page {
+    size: A4;
+    margin: 20mm 18mm 18mm 18mm;
+    @bottom-left { content: "Zava Energy · CS-BIL-001 v3.3 · Internal · Fictional company, demo content"; font: 7.5pt "Segoe UI", sans-serif; color: #777; }
+    @bottom-right { content: "Page " counter(page); font: 7.5pt "Segoe UI", sans-serif; color: #777; }
+  }
+  body { font: 10pt/1.55 "Segoe UI", sans-serif; color: #1f2328; margin: 0; }
+  .eyebrow { color: #0f7b5f; font-weight: 700; font-size: 8.5pt; letter-spacing: 0.12em; margin: 0 0 4px; }
+  h1 { color: #0b3b2e; font-size: 22pt; line-height: 1.2; margin: 0 0 4px; }
+  .subtitle { color: #555; font-size: 11pt; margin: 0 0 8px; padding-bottom: 8px; border-bottom: 2px solid #0f7b5f; }
+  .meta { color: #555; font-size: 8pt; margin: 0 0 18px; padding-bottom: 8px; border-bottom: 1px solid #d5d9dd; }
+  .meta span { margin-right: 18px; }
+  h2 { color: #0b3b2e; font-size: 13pt; margin: 18px 0 8px; padding-bottom: 3px; border-bottom: 1px solid #d5d9dd; break-after: avoid; }
+  h3 { font-size: 10pt; margin: 12px 0 2px; break-after: avoid; }
+  p { margin: 0 0 6px; }
+  ul, ol { margin: 0 0 6px; padding-left: 20px; }
+  li { margin-bottom: 3px; }
+  .box { padding: 7px 12px; margin: 8px 0; break-inside: avoid; }
+  .info { background: #eef7f4; border-left: 4px solid #0f7b5f; }
+  .warn { background: #fff8e6; border-left: 4px solid #c58a00; }
+  .example { background: #f5f6f7; border: 1px solid #d5d9dd; border-radius: 3px; }
+  .qa dt { font-weight: 600; margin-top: 8px; break-after: avoid; }
+  .qa dd { margin: 0; }
+</style>
+</head>
+<body>
+
+<p class="eyebrow">ZAVA ENERGY · CUSTOMER SERVICE</p>
+<h1>Billing and Payments Handbook</h1>
+<p class="subtitle">How we bill household electricity customers, and how to answer their billing and payment questions</p>
+<p class="meta"><span>Document ID: CS-BIL-001</span><span>Version: 3.3</span><span>Effective: 16 November 2026</span><span>Owner: Billing Operations</span><br>Classification: Internal</p>
+
+<h2>1. Purpose and scope</h2>
+<p>This handbook is for customer advisors, billing advisors and the virtual assistant. Use it to explain invoices and payments to household electricity customers and to decide what to do next.</p>
+<p>It covers:</p>
+<ul>
+  <li>how invoices are calculated and what they contain;</li>
+  <li>meter readings and estimated consumption;</li>
+  <li>payment methods, overpayments and refunds;</li>
+  <li>payment extensions and overdue invoices;</li>
+  <li>high-bill questions, billing errors and corrections.</li>
+</ul>
+<p>It does not cover distribution invoices, meter faults or power outages (these belong to the network company, Northwind Grid), or contract sales, contract changes and moving (see the Contracts handbook).</p>
+
+<h2>2. Who does what</h2>
+<ul>
+  <li><strong>Virtual assistant</strong> (chat and phone, 24/7): answers billing questions and explains a verified customer's invoices, readings and payments. For a verified customer it can also apply a payment extension (section 8), correct an invoice that was based on an estimated reading (section 5), refund a credit balance to the customer's direct debit bank account (section 7) and arrange a callback from a customer advisor (section 12).</li>
+  <li><strong>Customer advisors</strong> (phone and chat, Monday to Friday, 09:00–17:00 local time): everything the virtual assistant does, plus complaints, payment difficulties and disconnection notices.</li>
+  <li><strong>Billing advisors</strong> (second line, Monday to Friday, 09:00–17:00 local time): review disputed invoices, issue the corrections that need a review, and arrange refunds to other bank accounts.</li>
+  <li><strong>Online service</strong> (24/7): customers can view invoices, consumption and contracts, and apply for a payment extension themselves.</li>
+</ul>
+<div class="box info"><strong>Account actions:</strong> before you apply an extension, correct an invoice, refund a credit or arrange a callback, tell the customer exactly what will change and ask them to confirm. Act only after they agree, then confirm what was done. Never say that an action has been done if it has not.</div>
+
+<h2>3. Verifying the customer</h2>
+<div class="box info">Before you share any account details or take any account action, the customer must give their <strong>customer number</strong> and the <strong>postcode of the supply address</strong>. Both must match the same account.</div>
+<ul>
+  <li>The customer number is printed at the top of every invoice.</li>
+  <li>If something is missing, ask only for the missing detail.</li>
+  <li>If the details do not match, say that you could not verify them and ask the customer to check. Never say which detail was wrong, and never reveal any account data.</li>
+  <li>Once a customer is verified, do not ask again in the same conversation unless they ask about a different account.</li>
+  <li>Without verification you can still answer general questions from this handbook.</li>
+  <li>Only the contract holder, or a person with the contract holder's written authorisation, can discuss the account.</li>
+</ul>
+
+<h2>4. How billing works</h2>
+<h3>4.1 Billing cycle and payment term</h3>
+<ul>
+  <li>Electricity is billed <strong>in arrears</strong>: the invoice covers consumption in a billing period that has already happened.</li>
+  <li>Billing is <strong>monthly</strong> unless the customer has agreed otherwise. On request, a customer can be billed every three months instead, starting from the next billing period.</li>
+  <li>The due date is on the invoice. The payment term is normally 20 days from the invoice date and never shorter than 14 days.</li>
+</ul>
+<h3>4.2 What is on a Zava Energy invoice</h3>
+<p>A Zava Energy invoice covers <strong>electricity sales only</strong>. All prices include VAT.</p>
+<ul>
+  <li><strong>Energy charge</strong>: consumption in kWh multiplied by the price.
+    <ul>
+      <li>Fixed-price contract: the same unit price (cents per kWh) for every kWh during the contract period.</li>
+      <li>Spot-price contract: the exchange spot price at the time of use plus a fixed margin per kWh. The invoice shows the average spot price for the period, weighted by when the customer used electricity.</li>
+    </ul>
+  </li>
+  <li><strong>Basic fee</strong>: a fixed monthly fee in euros. It is charged even if consumption is zero.</li>
+</ul>
+<p>Invoice total = energy charge + basic fee.</p>
+<div class="box example"><strong>Fixed price:</strong> 800 kWh × 10.00 c/kWh = €80.00. Plus basic fee €4.90. Total €84.90.<br><strong>Spot price:</strong> 800 kWh × (average spot 6.00 c/kWh + margin 0.50 c/kWh) = €52.00. Plus basic fee €3.95. Total €55.95.</div>
+<h3>4.3 What is not on our invoice</h3>
+<div class="box warn">Distribution, network services and electricity tax are billed <strong>separately by the local network company, Northwind Grid</strong>. That is why customers receive two electricity invoices. Zava Energy cannot see or change Northwind Grid invoices. For those invoices, meter faults and outages, the customer must contact Northwind Grid.</div>
+
+<h2>5. Meter readings and estimated consumption</h2>
+<ul>
+  <li>Northwind Grid reads the smart meter and sends the readings to us.</li>
+  <li>An invoice uses the meter reading known at billing time. Each invoice shows whether the reading was <strong>actual</strong> or <strong>estimated</strong>.</li>
+  <li>If no reading has arrived by billing time, consumption is estimated from the customer's earlier usage.</li>
+  <li>An estimate can be too high or too low. When the actual reading arrives later, compare it with the estimate.</li>
+</ul>
+<div class="box info"><strong>Correcting an estimated invoice:</strong> when the actual reading for the billing period has arrived and the invoice is still open, the virtual assistant or a customer advisor can correct it straight away. The corrected invoice uses the actual kWh at the contract price, plus the basic fee. It replaces the original invoice and keeps the same due date.</div>
+<ul>
+  <li>If the invoice has already been paid, the difference appears on the next invoice instead: a credit if the estimate was too high, an extra charge if it was too low.</li>
+  <li>Estimated invoices on spot-price contracts are corrected by a billing advisor, because the price depends on when the electricity was used.</li>
+  <li>If the customer cannot pay the corrected invoice by its due date, check whether it qualifies for a payment extension (section 8).</li>
+</ul>
+
+<h2>6. Paying invoices</h2>
+<ul>
+  <li><strong>E-invoice</strong>: the customer orders it in their online bank. The invoice then arrives in the online bank.</li>
+  <li><strong>Direct debit</strong>: the customer makes a direct debit agreement with their bank. The bank pays each invoice automatically on the due date.</li>
+  <li><strong>Bank transfer</strong>: the customer pays using the reference number on the invoice. Without the reference number, matching the payment can take longer.</li>
+  <li>Payments normally show on the account within 1–3 banking days.</li>
+</ul>
+<div class="box warn">A customer with direct debit who also pays the same invoice by bank transfer pays it twice. Check the payment history before telling a customer that an invoice is unpaid or overpaid.</div>
+
+<h2>7. Overpayments, credits and refunds</h2>
+<ul>
+  <li>An overpayment, for example an invoice paid twice, is kept as a <strong>credit balance</strong> on the account.</li>
+  <li>The credit balance is <strong>deducted automatically from the next invoice</strong>. The customer does not need to do anything.</li>
+  <li>If the customer wants the money back instead, the virtual assistant or a customer advisor can <strong>refund the credit balance to the bank account the customer's direct debit uses</strong>. The refund arrives within 5 banking days. A refund cannot be paid on the same day.</li>
+  <li>If the customer has no direct debit, or wants the money in another bank account, a <strong>billing advisor</strong> arranges the refund. The customer gives the account number (IBAN) and the account holder's name. Approved refunds are paid within 14 days.</li>
+</ul>
+
+<h2>8. Payment extensions</h2>
+<p>A payment extension moves the due date of one open invoice. It is free of charge.</p>
+<div class="box info"><strong>Length:</strong> the new due date can be at most <strong>14 days</strong> after the original due date.<br><strong>Who applies it:</strong> the customer in the online service, the virtual assistant or a customer advisor. After applying it, tell the customer the new due date.</div>
+<p>An invoice is <strong>not eligible</strong> if:</p>
+<ul>
+  <li>the customer has another overdue invoice;</li>
+  <li>the invoice has already received an extension;</li>
+  <li>the invoice total is over EUR 5,000;</li>
+  <li>the customer has already used 3 extensions in the last 12 months;</li>
+  <li>the invoice is already past its due date.</li>
+</ul>
+<p>If the invoice is not eligible, explain the reason in plain language. If the customer is having difficulty paying, offer a callback from a customer advisor.</p>
+
+<h2>9. Overdue invoices</h2>
+<ul>
+  <li>If an invoice is still unpaid 14 days after its due date, we send a payment reminder.</li>
+  <li>A reminder fee of EUR 5.00 is added to the next invoice. Late-payment interest is charged at the statutory rate.</li>
+  <li>An invoice that is past its due date cannot get a payment extension.</li>
+  <li>We send a disconnection notice only when an invoice is still unpaid after its payment reminder.</li>
+</ul>
+<div class="box warn">If a customer mentions a disconnection notice, check the account for overdue invoices and tell the customer what you find. Then offer a <strong>priority callback</strong> from a customer advisor, who goes through the notice with them.</div>
+
+<h2>10. "My bill is higher than expected"</h2>
+<p>This is the most common billing question. Work through these steps before you give an answer.</p>
+<ol>
+  <li>Verify the customer (section 3).</li>
+  <li>Find the invoice the customer means: period, invoice number, total and due date.</li>
+  <li>Check that it is a Zava Energy invoice. If it is for distribution, network services or electricity tax, it is a Northwind Grid invoice (section 4.3).</li>
+  <li>Check the reading type. If it was estimated, compare it with any actual reading received since then (section 5).</li>
+  <li>Compare consumption in kWh with earlier invoices. Higher usage is common in autumn and winter because of heating and darker days.</li>
+  <li>Compare the price. On spot-price contracts, check the average spot price against earlier periods. On fixed-price contracts, check whether the contract price has changed.</li>
+  <li>Check payments and credits: missed payments, double payments and credit balances.</li>
+  <li>Explain the cause in plain language with the key numbers: kWh, price and euro amounts compared with the earlier invoice.</li>
+  <li>Offer the right next step: correcting an estimated invoice, refunding a credit, a payment extension if eligible, or a callback.</li>
+</ol>
+<div class="box info">A higher bill caused by higher consumption or higher prices is <strong>not a billing error</strong>. Only call something a billing error when the account records show it.</div>
+
+<h2>11. Billing errors, disputes and corrections</h2>
+<p>Examples of billing errors: a wrong price applied, a duplicate charge, an invoice for the wrong period, or an estimate that the actual reading shows was clearly wrong.</p>
+<p>An estimated invoice is corrected as described in section 5. Other billing errors are disputes for a billing advisor:</p>
+<ol>
+  <li>The virtual assistant or a customer advisor records the dispute: customer number, invoice number, what the customer disputes, and what has already been checked.</li>
+  <li>A billing advisor reviews it within 5 working days.</li>
+  <li>If the correction is approved, it appears as a credit on a later invoice, and the customer is told the outcome.</li>
+  <li>If the correction is not approved, the billing advisor explains why to the customer.</li>
+</ol>
+<p>During the review, the original invoice remains due. If the customer cannot pay it, check whether it qualifies for a payment extension.</p>
+<div class="box warn">Never promise the outcome of a review before a billing advisor has decided.</div>
+
+<h2>12. Handing over to an advisor</h2>
+<p>Hand over when the customer needs something the virtual assistant cannot do, for example:</p>
+<ul>
+  <li>a disputed invoice, a correction of a spot-price invoice, or a refund to another bank account (billing advisor);</li>
+  <li>difficulty paying when no extension is possible, or a disconnection notice (customer advisor);</li>
+  <li>a complaint, or a billing question this handbook does not cover (customer advisor).</li>
+</ul>
+<p>For a customer advisor, offer a <strong>callback</strong>: the advisor calls the customer on the phone number on the account during advisor hours. A disconnection notice gets a priority callback. For a billing advisor, record the case (section 11); the billing advisor contacts the customer.</p>
+<p>Tell the customer who will help and what they can do. Give advisor opening hours only when the customer asks or wants to contact an advisor themselves.</p>
+
+<h2>13. Communicating with customers</h2>
+<ul>
+  <li>Use plain language and avoid internal terms. Say "the meter reading was estimated", not "est. read type".</li>
+  <li>Give the key numbers, such as kWh, the price and the euro amounts, but not more than the customer needs.</li>
+  <li>On the phone, say amounts in euros and cents, for example "84 euros and 90 cents", and dates as day and month, for example "25 November".</li>
+  <li>Before an account action, say what will change and ask, for example "I can move the due date to 8 March. Shall I do that?"</li>
+  <li>Do not blame the customer. Explain what happened and what they can do next.</li>
+</ul>
+
+<h2>14. Common questions and model answers</h2>
+<dl class="qa">
+  <dt>Why do I get two electricity bills?</dt>
+  <dd>We bill for the electricity itself. Your local network company, Northwind Grid, bills separately for delivering it to your home and for electricity tax. Questions about their invoice go to Northwind Grid.</dd>
+  <dt>Why does my invoice say the reading was estimated?</dt>
+  <dd>We had not received your meter reading when the invoice was made, so we estimated your usage from your earlier consumption. Once the actual reading arrives, we can correct the invoice with it.</dd>
+  <dt>My consumption did not change, so why is my bill higher?</dt>
+  <dd>On a spot-price contract, the price follows the electricity exchange, so the same usage can cost more in a month with higher prices. On a fixed-price contract, check whether the contract price changed.</dd>
+  <dt>I paid the same invoice twice. What happens to the money?</dt>
+  <dd>The extra payment stays on your account as a credit and is deducted automatically from your next invoice. If you would rather have it back, we can refund it to the bank account your direct debit uses.</dd>
+  <dt>Can I get more time to pay?</dt>
+  <dd>If your invoice is eligible, we can move the due date by up to 14 days, free of charge. I can do it for you now, or you can do it in the online service.</dd>
+  <dt>I got a disconnection notice. What should I do?</dt>
+  <dd>Let me check your account first. Then I can ask a customer advisor to call you back as a priority to go through the notice with you.</dd>
+  <dt>Why do I pay a basic fee when I used hardly any electricity?</dt>
+  <dd>The basic fee is a fixed monthly part of your contract. It is charged every month, whatever your consumption.</dd>
+  <dt>How do I switch to e-invoice or direct debit?</dt>
+  <dd>Both are set up in your online bank: order an e-invoice, or make a direct debit agreement. Use the reference number on your invoice.</dd>
+  <dt>I paid yesterday. Why does the invoice still show as open?</dt>
+  <dd>Payments normally show on your account within 1 to 3 banking days.</dd>
+</dl>
+
+<h2>15. Glossary</h2>
+<ul>
+  <li><strong>Actual reading</strong>: a meter reading received from the network company.</li>
+  <li><strong>Basic fee</strong>: the fixed monthly fee in the contract.</li>
+  <li><strong>Callback</strong>: a call from a customer advisor to the customer, arranged by the virtual assistant or another advisor.</li>
+  <li><strong>Credit balance</strong>: money on the account from an overpayment or approved correction, deducted from the next invoice.</li>
+  <li><strong>Energy charge</strong>: consumption in kWh multiplied by the price.</li>
+  <li><strong>Estimated reading</strong>: consumption calculated from earlier usage when no reading has arrived.</li>
+  <li><strong>Margin</strong>: the fixed amount per kWh added to the spot price on spot-price contracts.</li>
+  <li><strong>Network company</strong>: the company that owns the local grid and meter and bills distribution and electricity tax; here, Northwind Grid.</li>
+  <li><strong>Payment extension</strong>: a later due date for one open invoice, at most 14 days, free of charge.</li>
+  <li><strong>Reference number</strong>: the number on the invoice that links a bank transfer to that invoice.</li>
+  <li><strong>Spot price</strong>: the electricity exchange price at the time of use.</li>
+</ul>
+
+</body>
+</html>

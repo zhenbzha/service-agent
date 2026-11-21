@@ -10,7 +10,7 @@ A voice customer-service agent for the fictional energy company Zava Energy, bui
 ## Repository layout
 
 - `agents/` - instructions, greeting and data for each agent
-- `knowledge/` - simulated internal billing handbook (PDF) that human advisors use; synced to the knowledge base by `scripts/sync_knowledge.py`
+- `knowledge/` - simulated internal billing handbook (PDF, printed from the HTML next to it) that advisors and the virtual assistant use; synced to the knowledge base by `scripts/sync_knowledge.py`
 - `evals/` - evaluation cases for the billing specialist
 - `web/` - the web app for talking to the voice agent (Next.js), deployed to Azure Container Apps
 - `infra/` - Bicep with Azure Verified Modules, deployed with azd (`azure.yaml`)
@@ -70,6 +70,16 @@ The script reads every PDF in `knowledge/`, embeds each page with the `text-embe
 
 Re-run it whenever a PDF in `knowledge/` changes. No storage account is involved.
 
+To change the handbook, edit `knowledge/zava-energy-billing-handbook.html` and print it to PDF with headless Edge, then re-run the sync:
+
+```powershell
+$edge = "${env:ProgramFiles(x86)}\Microsoft\Edge\Application\msedge.exe"
+$html = (Resolve-Path knowledge\zava-energy-billing-handbook.html).Path
+& $edge --headless --user-data-dir="$env:TEMP\handbook-edge" --no-pdf-header-footer --print-to-pdf="$PWD\knowledge\zava-energy-billing-handbook.pdf" ([uri]$html).AbsoluteUri
+```
+
+The specialist has no write tools. In this demo it only says that it applied an action the handbook allows, after the customer agrees; nothing in `data.json` changes.
+
 ## Test
 
 - `uv run scripts/test_specialist.py` tests the specialist on its own and checks each answer against the tagged-text format that delegation requires. It runs every scenario and exits with code 1 on any format problem.
@@ -89,7 +99,7 @@ The script runs a Foundry cloud evaluation of the specialist version that the vo
 - `builtin.groundedness` - makes no claim that the handbook or the customer records don't support
 - `builtin.tool_call_accuracy` - searches the handbook when a billing rule is needed, with a fitting query
 - `builtin.tool_call_success` - handbook searches run without errors
-- `billing-specialist-policy`, a safety rubric (preview) - identity checks, privacy and no claims of account actions
+- `billing-specialist-policy`, a safety rubric (preview) - identity checks, privacy, and account actions only after the customer agrees
 - `billing-specialist-voice-quality`, a quality rubric (preview) - short spoken answers with a clear next step
 
 The rubrics are defined in `scripts/rubrics.py`. The script publishes a new rubric version only when a definition changes.
@@ -174,7 +184,7 @@ samples\gpt_live\python\.venv\Scripts\python.exe samples\gpt_live\python\respons
 
 Demo customers (customer number, postcode):
 
-- 100245, 00150 - high bill caused by an estimated meter reading
-- 100318, 02100 - October bill paid twice
+- 100245, 00150 - high bill caused by an estimated meter reading; the agent corrects it
+- 100318, 02100 - October bill paid twice; the agent refunds the credit
 - 100472, 33100 - bill increase from spot price and higher usage
-- 100533, 90100 - payment extension
+- 100533, 90100 - payment extension; also a disconnection notice, where the agent arranges an advisor callback
