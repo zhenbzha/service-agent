@@ -4,7 +4,7 @@ import { modelType } from 'types.bicep'
 param location string
 
 @description('Tags applied to all resources.')
-param tags object
+param tags {*: string}
 
 @description('Unique suffix for globally unique resource names.')
 param resourceToken string
@@ -42,7 +42,6 @@ var knowledgeBaseMcpEndpoint = deploySearch
 
 var roleIds = {
   foundryUser: '53ca6127-db72-4b80-b1b0-d745d6d5456d'
-  cognitiveServicesUser: 'a97b65f3-24c7-4388-baec-2e87135dc908'
   cognitiveServicesOpenAIUser: '5e0bd9bd-7b93-4f28-af87-19fc36ad61bd'
   logAnalyticsReader: '73c42c96-874c-492b-b04d-ab87d138a893'
   searchIndexDataContributor: '8ebe5a00-799e-43f5-93ac-243d3dce84a7'
@@ -85,7 +84,7 @@ module appInsights 'br/public:avm/res/insights/component:0.8.0' = {
   }
 }
 
-module foundry 'br/public:avm/res/cognitive-services/account:0.19.2' = {
+module foundry 'br/public:avm/res/cognitive-services/account:0.19.3' = {
   name: foundryAccountName
   params: {
     name: foundryAccountName
@@ -149,7 +148,7 @@ module foundry 'br/public:avm/res/cognitive-services/account:0.19.2' = {
   }
 }
 
-// AVM has no module for Foundry projects or project connections, so these use native resources
+// There is no AVM resource module for Foundry projects or project connections, so these use native resources
 // that follow Azure-Samples/azd-ai-starter-basic. The explicit dependency delays reading the
 // existing account until the AVM module has created it.
 resource foundryAccount 'Microsoft.CognitiveServices/accounts@2026-09-01' existing = {
@@ -193,7 +192,7 @@ resource appInsightsConnection 'Microsoft.CognitiveServices/accounts/projects/co
 
 // Account scope, not project scope: evaluations call the judge model deployment, and Learn
 // ("Evaluation permissions") says a project-only Foundry User assignment doesn't authorize inference.
-// The project inherits the assignment.
+// The project inherits the assignment. It also covers the embedding calls in scripts/sync_knowledge.py.
 module developerFoundryUser 'br/public:avm/ptn/authorization/resource-role-assignment:0.1.2' = {
   name: 'ra-dev-foundry-user-${resourceToken}'
   params: {
@@ -246,23 +245,13 @@ module search 'br/public:avm/res/search/search-service:0.13.1' = if (deploySearc
 }
 
 // Lets the search service call Foundry models for vectorization, query planning and answer synthesis.
-module searchCognitiveServicesUser 'br/public:avm/ptn/authorization/resource-role-assignment:0.1.2' = if (deploySearch) {
-  name: 'ra-search-cs-user-${resourceToken}'
+// Learn "Create a knowledge base" assigns this role on the Foundry resource for least privilege.
+module searchOpenAIUser 'br/public:avm/ptn/authorization/resource-role-assignment:0.1.2' = if (deploySearch) {
+  name: 'ra-search-openai-user-${resourceToken}'
   params: {
     // The search module enables a system-assigned identity above, so the principal ID is always set.
     principalId: search!.outputs.systemAssignedMIPrincipalId!
     principalType: 'ServicePrincipal'
-    resourceId: foundry.outputs.resourceId
-    roleDefinitionId: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', roleIds.cognitiveServicesUser)
-  }
-}
-
-// Lets the developer embed the knowledge PDFs (scripts/sync_knowledge.py) on the account endpoint.
-module developerOpenAIUser 'br/public:avm/ptn/authorization/resource-role-assignment:0.1.2' = if (deploySearch) {
-  name: 'ra-dev-openai-user-${resourceToken}'
-  params: {
-    principalId: principalId
-    principalType: principalType
     resourceId: foundry.outputs.resourceId
     roleDefinitionId: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', roleIds.cognitiveServicesOpenAIUser)
   }
