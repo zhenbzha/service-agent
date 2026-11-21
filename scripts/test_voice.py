@@ -81,7 +81,7 @@ class ReplyTracker:
     closed_event: Mapping | None = None
 
     @classmethod
-    def start_now(cls) -> "ReplyTracker":
+    def start_now(cls) -> ReplyTracker:
         now = time.monotonic()
         return cls(started_at=now, last_activity=now)
 
@@ -275,9 +275,12 @@ async def main() -> None:
     # Transcripts can hold characters the Windows console code page can't encode.
     sys.stdout.reconfigure(encoding="utf-8")
     load_azd_env()
-    async with azd_credential_async() as credential, AIProjectClient(
-        endpoint=require_env("FOUNDRY_PROJECT_ENDPOINT"), credential=credential, allow_preview=True
-    ) as project:
+    async with (
+        azd_credential_async() as credential,
+        AIProjectClient(
+            endpoint=require_env("FOUNDRY_PROJECT_ENDPOINT"), credential=credential, allow_preview=True
+        ) as project,
+    ):
         voice_version, specialist_version = await latest_voice_agent(project)
         print(f"Testing {VOICE_AGENT_NAME}:{voice_version} with scenario '{args.scenario}'")
         await run_scenario(project, voice_version, specialist_version, SCENARIOS[args.scenario])

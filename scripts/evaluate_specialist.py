@@ -25,7 +25,7 @@ import hashlib
 import json
 import sys
 import time
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from azure.ai.projects import AIProjectClient
 from azure.ai.projects.models import (
@@ -196,7 +196,7 @@ def start_run(openai_client, evaluation_id: str, specialist_version: str, cases:
         },
         target=AzureAIAgentTargetParam(type="azure_ai_agent", name=SPECIALIST_NAME, version=specialist_version),
     )
-    started = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    started = datetime.now(UTC).strftime("%Y-%m-%d %H:%M UTC")
     return openai_client.evals.runs.create(
         eval_id=evaluation_id,
         name=f"{SPECIALIST_NAME}:{specialist_version} {started}",
@@ -266,7 +266,9 @@ def print_summary(run: dict) -> None:
         print(f"Run error: {run['error']['message']}")
     counts = run.get("result_counts")
     if counts:
-        print(f"Cases: {counts['passed']} passed, {counts['failed']} failed, {counts['errored']} errored of {counts['total']}")
+        print(
+            f"Cases: {counts['passed']} passed, {counts['failed']} failed, {counts['errored']} errored of {counts['total']}"
+        )
     # Each criterion counts only the cases it applied to; skipped cases count as neither passed nor failed.
     for criterion_result in run.get("per_testing_criteria_results") or []:
         label = result_label({"name": criterion_result["testing_criteria"], "metric": criterion_result.get("metric")})
@@ -284,9 +286,13 @@ def main() -> int:
     judge = require_env("RESPONSES_DEPLOYMENT")
     cases = read_cases()
     context = grounding_context()
-    with azd_credential() as credential, AIProjectClient(
-        endpoint=require_env("FOUNDRY_PROJECT_ENDPOINT"), credential=credential, allow_preview=True
-    ) as project, project.get_openai_client() as openai_client:
+    with (
+        azd_credential() as credential,
+        AIProjectClient(
+            endpoint=require_env("FOUNDRY_PROJECT_ENDPOINT"), credential=credential, allow_preview=True
+        ) as project,
+        project.get_openai_client() as openai_client,
+    ):
         specialist_version = pinned_specialist_version(project)
         rubric_versions = {rubric.name: create_rubric_if_changed(project, rubric) for rubric in RUBRICS}
         evaluation = create_evaluation(openai_client, specialist_version, testing_criteria(judge, rubric_versions))

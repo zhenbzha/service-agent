@@ -148,8 +148,7 @@ def run_scenario(openai_client, specialist_version: str, name: str, customer_tur
     conversation = openai_client.conversations.create()
     try:
         return sum(
-            len(ask_specialist(openai_client, conversation.id, specialist_version, turn))
-            for turn in customer_turns
+            len(ask_specialist(openai_client, conversation.id, specialist_version, turn)) for turn in customer_turns
         )
     finally:
         openai_client.conversations.delete(conversation_id=conversation.id)
@@ -167,9 +166,13 @@ def main() -> int:
     sys.stdout.reconfigure(encoding="utf-8")
     load_azd_env()
     scenario_names = [args.scenario] if args.scenario else list(SCENARIOS)
-    with azd_credential() as credential, AIProjectClient(
-        endpoint=require_env("FOUNDRY_PROJECT_ENDPOINT"), credential=credential, allow_preview=True
-    ) as project, project.get_openai_client() as openai_client:
+    with (
+        azd_credential() as credential,
+        AIProjectClient(
+            endpoint=require_env("FOUNDRY_PROJECT_ENDPOINT"), credential=credential, allow_preview=True
+        ) as project,
+        project.get_openai_client() as openai_client,
+    ):
         specialist_version = pinned_specialist_version(project)
         print(f"Testing {SPECIALIST_NAME}:{specialist_version}")
         problem_count = sum(

@@ -136,9 +136,7 @@ def voice_agent_definition(model: str, specialist_version: str) -> VoiceAgentLiv
             format=LiveSessionAudioFormatPCMParam(rate=AUDIO_SAMPLE_RATE),
             output=LiveInitialSessionAudioOutputParam(voice=VOICE_NAME),
         ),
-        delegation=VoiceAgentLiveManagedAgentDelegation(
-            agent_name=SPECIALIST_NAME, agent_version=specialist_version
-        ),
+        delegation=VoiceAgentLiveManagedAgentDelegation(agent_name=SPECIALIST_NAME, agent_version=specialist_version),
         store=True,
     )
     # system_tools is a documented GPT-Live field (Learn: "Let the agent end the conversation")

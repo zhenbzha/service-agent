@@ -19,3 +19,22 @@ dependencies = [
 name = "microsoft-pypi-proxy"
 url = "https://packagefeedproxy.microsoft.io/pypi/simple"
 default = true
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+    "ruff>=0.17.5",
+]
+
+[tool.pytest]
+testpaths = ["tests"]
+pythonpath = ["scripts"]
+
+[tool.ruff]
+line-length = 120
+src = ["scripts"]
+
+[tool.ruff.lint]
+extend-select = ["I", "UP", "B", "ASYNC", "SIM"]
+# The azure-ai-projects GPT-Live samples pass a timeout to their async wait helpers; so does test_voice.py.
+ignore = ["ASYNC109"]

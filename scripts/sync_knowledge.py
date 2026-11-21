@@ -178,7 +178,10 @@ def knowledge_source() -> SearchIndexKnowledgeSource:
         description=KNOWLEDGE_DESCRIPTION,
         search_index_parameters=SearchIndexKnowledgeSourceParameters(
             search_index_name=INDEX_NAME,
-            source_data_fields=[SearchIndexFieldReference(name="file_name"), SearchIndexFieldReference(name="page_number")],
+            source_data_fields=[
+                SearchIndexFieldReference(name="file_name"),
+                SearchIndexFieldReference(name="page_number"),
+            ],
         ),
     )
 

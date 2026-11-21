@@ -92,9 +92,10 @@ def main() -> None:
     )
 
     # allow_preview sends the VoiceAgents=V1Preview feature header that voice agents require.
-    with azd_credential() as credential, AIProjectClient(
-        endpoint=endpoint, credential=credential, allow_preview=True
-    ) as project:
+    with (
+        azd_credential() as credential,
+        AIProjectClient(endpoint=endpoint, credential=credential, allow_preview=True) as project,
+    ):
         check_deployments_exist(project, voice_model, specialist_model)
         specialist = create_version_if_changed(
             project,
